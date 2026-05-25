@@ -1,0 +1,41 @@
+{{ 'section-editorial-value-row.css' | asset_url | stylesheet_tag }}
+
+<section class="editorial-value-row" aria-label="What we value">
+  <div class="editorial-value-row__inner page-width">
+    <div class="editorial-value">
+      <span class="editorial-value__icon" aria-hidden="true">{{ 'icon-box.svg' | inline_asset_content }}</span>
+      <h2 class="editorial-value__title">Small Batch</h2>
+      <p class="editorial-value__copy">We make things in<br>reasonable quantities.</p>
+    </div>
+    <div class="editorial-value">
+      <span class="editorial-value__icon" aria-hidden="true">{{ 'icon-check-mark.svg' | inline_asset_content }}</span>
+      <h2 class="editorial-value__title">Built To Last</h2>
+      <p class="editorial-value__copy">Designed to handle<br>real life.</p>
+    </div>
+    <div class="editorial-value">
+      <span class="editorial-value__icon" aria-hidden="true">{{ 'icon-ruler.svg' | inline_asset_content }}</span>
+      <h2 class="editorial-value__title">Honest Design</h2>
+      <p class="editorial-value__copy">No fluff.<br>Just useful things.</p>
+    </div>
+    <div class="editorial-value">
+      <span class="editorial-value__icon" aria-hidden="true">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+      <h2 class="editorial-value__title">Support Real Humans</h2>
+      <p class="editorial-value__copy">A small team.<br>Actual replies.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial value row",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Editorial value row"
+    }
+  ]
+}
+{% endschema %}

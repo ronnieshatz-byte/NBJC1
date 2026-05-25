@@ -1,0 +1,88 @@
+{{ 'section-editorial-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+
+<footer class="editorial-footer">
+  <div class="editorial-footer__inner page-width">
+    <div class="editorial-footer__brand">
+      <a class="editorial-footer__mark" href="{{ routes.root_url }}">NBJC</a>
+      <p class="editorial-footer__tagline">Not Broken. Just Custom.</p>
+      <p class="editorial-footer__copyright">&copy; 2026 NBJC<br>All rights reserved.</p>
+    </div>
+
+    <nav class="editorial-footer__nav" aria-label="Shop">
+      <h2 class="editorial-footer__title">Shop</h2>
+      <ul class="editorial-footer__links list-unstyled">
+        <li><a href="{{ routes.all_products_collection_url }}">Shop All</a></li>
+        <li><a href="/pages/operational-states">Operational States</a></li>
+        <li><a href="/pages/field-guide">Field Guide</a></li>
+      </ul>
+    </nav>
+
+    <nav class="editorial-footer__nav" aria-label="Help">
+      <h2 class="editorial-footer__title">Help</h2>
+      <ul class="editorial-footer__links list-unstyled">
+        <li><a href="/pages/shipping-returns">Shipping &amp; Returns</a></li>
+        <li><a href="/pages/faq">FAQ</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="editorial-footer__notes">
+      <h2 class="editorial-footer__title">Field Guide Notes</h2>
+      <p class="editorial-footer__copy">New objects.<br>Minor observations.<br>Intermittent correspondence.</p>
+
+      {%- form 'customer', id: 'EditorialFooterNewsletter', class: 'editorial-footer__form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="editorial-footer__field">
+          <label class="visually-hidden" for="EditorialFooterEmail--{{ section.id }}">Email address</label>
+          <input
+            id="EditorialFooterEmail--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            value="{{ form.email }}"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            placeholder="Email address"
+            aria-required="true"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="EditorialFooterNewsletter-error"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="EditorialFooterNewsletter-success"
+            {% endif %}
+            required
+          >
+          <button type="submit" name="commit" aria-label="{{ 'newsletter.button_label' | t }}">&rarr;</button>
+        </div>
+        {%- if form.errors -%}
+          <small class="editorial-footer__message" id="EditorialFooterNewsletter-error">
+            {{- form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email -}}
+          </small>
+        {%- endif -%}
+        {%- if form.posted_successfully? -%}
+          <p class="editorial-footer__message" id="EditorialFooterNewsletter-success" tabindex="-1" autofocus>
+            {{- 'newsletter.success' | t -}}
+          </p>
+        {%- endif -%}
+      {%- endform -%}
+
+      {%- render 'social-icons', class: 'editorial-footer__social' -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Editorial footer",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Editorial footer"
+    }
+  ]
+}
+{% endschema %}
