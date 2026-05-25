@@ -1,0 +1,41 @@
+{{ 'section-editorial-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="editorial-hero" aria-label="Introduction">
+  <div class="editorial-hero__media">
+    <img
+      src="{{ 'hero-apartment-main.jpg' | asset_url }}"
+      class="editorial-hero__image"
+      alt=""
+      width="1672"
+      height="941"
+      loading="eager"
+      fetchpriority="high"
+    >
+  </div>
+  <div class="editorial-hero__content page-width">
+    <div class="editorial-hero__copy">
+      <p class="editorial-hero__eyebrow">A FIELD GUIDE FOR MODERN LIFE FRICTION</p>
+      <h1 class="editorial-hero__heading">Not Broken.<br>Just Custom.</h1>
+      <p class="editorial-hero__supporting">For people still figuring it out.</p>
+      <a href="{{ routes.all_products_collection_url }}" class="editorial-hero__button button button--secondary">
+        Browse Stickers
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "presets": [
+    {
+      "name": "Editorial hero"
+    }
+  ]
+}
+{% endschema %}
