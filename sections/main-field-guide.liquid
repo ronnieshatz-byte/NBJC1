@@ -1,0 +1,247 @@
+{{ 'section-main-field-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="field-guide color-scheme-1 gradient">
+  <section class="field-guide__hero" aria-labelledby="FieldGuideTitle">
+    <div class="field-guide__hero-inner page-width">
+      <div class="field-guide__hero-copy">
+        <p class="field-guide__eyebrow">FIELD GUIDE</p>
+        <h1 class="field-guide__hero-heading" id="FieldGuideTitle">
+          For people<br>
+          still figuring it out.
+        </h1>
+        <span class="field-guide__rule" aria-hidden="true"></span>
+        <p class="field-guide__hero-subcopy">
+          Mostly stickers.<br>
+          Occasionally emotional infrastructure.
+        </p>
+      </div>
+      <div class="field-guide__hero-media">
+        <img
+          src="{{ 'nbjc-field-guide-hero.png' | asset_url }}"
+          alt=""
+          width="1536"
+          height="1024"
+          loading="eager"
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="field-guide__intro">
+    <div class="field-guide__intro-inner page-width">
+      <div class="field-guide__intro-copy">
+        <p>
+          We make things for people with seventeen tabs open,<br class="field-guide__desktop-break">
+          a half-finished water bottle, and a sticky note that says<br class="field-guide__desktop-break">
+          &ldquo;rest is productive&rdquo; they haven&rsquo;t fully believed yet.
+        </p>
+        <p>
+          Our stickers, badge reels, and everyday carry objects<br class="field-guide__desktop-break">
+          are designed to hold emotional weight quietly -<br class="field-guide__desktop-break">
+          without turning your life into a self-improvement project.
+        </p>
+      </div>
+      <div class="field-guide__intro-media">
+        <img
+          src="{{ 'nbjc-field-guide-thursday-list.png' | asset_url }}"
+          alt=""
+          width="1536"
+          height="1024"
+          loading="lazy"
+        >
+      </div>
+      <aside class="field-guide__acknowledgment">
+        <h2>Not Broken. Just Custom.</h2>
+        <span class="field-guide__rule" aria-hidden="true"></span>
+        <p>
+          Started as a quiet acknowledgment:<br>
+          most people are carrying more than they let on.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="field-guide__states" aria-labelledby="FieldGuideStatesHeading">
+    <div class="page-width">
+      <header class="field-guide__states-header">
+        <div>
+          <p class="field-guide__eyebrow">OPERATIONAL STATES</p>
+          <h2 id="FieldGuideStatesHeading">A few familiar conditions.</h2>
+        </div>
+        <p class="field-guide__states-note">
+          Most people cycle through these.<br>
+          Sometimes daily.
+        </p>
+      </header>
+
+      <div class="field-guide__state-grid">
+        <article class="field-guide-state field-guide-state--image-left">
+          <div class="field-guide-state__media">
+            <img
+              src="{{ 'nbjc-field-guide-current-objective.png' | asset_url }}"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+            >
+          </div>
+          <div class="field-guide-state__copy">
+            <p class="field-guide-state__number">01 / OPERATIONAL STATE</p>
+            <h3>Current Objective</h3>
+            <p class="field-guide-state__description">Reduced-capacity operation.<br>Progress still counts.</p>
+            <dl class="field-guide-state__metrics">
+              <div><dt>Status</dt><dd>Active</dd></div>
+              <div><dt>Capacity</dt><dd>Limited</dd></div>
+              <div><dt>Systems</dt><dd>Functional</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="field-guide-state field-guide-state--image-right">
+          <div class="field-guide-state__media">
+            <img
+              src="{{ 'nbjc-field-guide-side-quests.png' | asset_url }}"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+            >
+          </div>
+          <div class="field-guide-state__copy">
+            <p class="field-guide-state__number">02 / OPERATIONAL STATE</p>
+            <h3>Side Quests</h3>
+            <p class="field-guide-state__description">Rerouted accidentally.<br>Continuing anyway.</p>
+            <dl class="field-guide-state__metrics">
+              <div><dt>Status</dt><dd>Active</dd></div>
+              <div><dt>Capacity</dt><dd>Variable</dd></div>
+              <div><dt>Focus</dt><dd>Scattered</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="field-guide-state field-guide-state--image-left">
+          <div class="field-guide-state__media">
+            <img
+              src="{{ 'nbjc-field-guide-recalibrating.png' | asset_url }}"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+            >
+          </div>
+          <div class="field-guide-state__copy">
+            <p class="field-guide-state__number">03 / OPERATIONAL STATE</p>
+            <h3>Recalibrating</h3>
+            <p class="field-guide-state__description">Demand levels temporarily lowered.<br>Systems adjusting.</p>
+            <dl class="field-guide-state__metrics">
+              <div><dt>Status</dt><dd>Temporary</dd></div>
+              <div><dt>Energy</dt><dd>Conserving</dd></div>
+              <div><dt>Outlook</dt><dd>TBD</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="field-guide-state field-guide-state--image-right">
+          <div class="field-guide-state__media">
+            <img
+              src="{{ 'nbjc-field-guide-emotional-damage.png' | asset_url }}"
+              alt=""
+              width="1448"
+              height="1086"
+              loading="lazy"
+            >
+          </div>
+          <div class="field-guide-state__copy">
+            <p class="field-guide-state__number">04 / OPERATIONAL STATE</p>
+            <h3>Emotional Damage</h3>
+            <p class="field-guide-state__description">Consequences acknowledged.<br>Repair in progress.</p>
+            <dl class="field-guide-state__metrics">
+              <div><dt>Status</dt><dd>Ongoing</dd></div>
+              <div><dt>Capacity</dt><dd>Fragile</dd></div>
+              <div><dt>Support</dt><dd>Snacks</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="field-guide__make" aria-labelledby="FieldGuideMakeHeading">
+    <div class="field-guide__make-inner page-width">
+      <div class="field-guide__make-copy">
+        <p class="field-guide__eyebrow">WHAT WE MAKE</p>
+        <h2 id="FieldGuideMakeHeading">
+          Mostly stickers.<br>
+          Occasionally emotional infrastructure.
+        </h2>
+        <p class="field-guide__make-body">
+          Small objects for open tabs,<br>
+          side quests,<br>
+          half-finished systems,<br>
+          and functioning approximately.
+        </p>
+      </div>
+      <div class="field-guide__make-list">
+        <div>
+          <h3>STICKERS</h3>
+          <p>For laptops, notebooks, water bottles, and visible coping mechanisms.</p>
+        </div>
+        <div>
+          <h3>BADGE REELS</h3>
+          <p>For keeping the useful thing attached to the other useful thing.</p>
+        </div>
+        <div>
+          <h3>PAPER THINGS</h3>
+          <p>For plans, notes, lists, and evidence that you tried.</p>
+        </div>
+      </div>
+      <div class="field-guide__make-media">
+        <img
+          src="{{ 'nbjc-field-guide-badge-detail.png' | asset_url }}"
+          alt=""
+          width="1122"
+          height="1402"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="field-guide__closing">
+    <div class="field-guide__closing-inner page-width">
+      <div class="field-guide__closing-copy">
+        <h2>
+          We don&rsquo;t make merch.<br>
+          We make inventory for the overwhelmed.
+        </h2>
+        <span class="field-guide__rule" aria-hidden="true"></span>
+        <a href="{{ routes.collections_url }}" class="field-guide__cta">SHOP OPERATIONAL STATES &rarr;</a>
+      </div>
+      <div class="field-guide__closing-media">
+        <img
+          src="{{ 'nbjc-field-guide-closing-note.png' | asset_url }}"
+          alt=""
+          width="1448"
+          height="1086"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Field Guide page",
+  "tag": "section",
+  "class": "section field-guide-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "presets": [
+    {
+      "name": "Field Guide page"
+    }
+  ]
+}
+{% endschema %}
