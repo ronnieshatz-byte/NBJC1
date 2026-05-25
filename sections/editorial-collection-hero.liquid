@@ -1,0 +1,150 @@
+{{ 'section-editorial-collection-page.css' | asset_url | stylesheet_tag }}
+
+<div class="editorial-collection-hero">
+  <div class="editorial-collection-hero__inner page-width">
+    <div class="editorial-collection-hero__copy">
+      <p class="editorial-collection-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1 class="editorial-collection-hero__heading">
+        {{ section.settings.heading_line_1 | escape }}<br>
+        {{ section.settings.heading_line_2 | escape }}
+      </h1>
+      <p class="editorial-collection-hero__body">
+        {{ section.settings.body_line_1 | escape }}<br>
+        {{ section.settings.body_line_2 | escape -}}
+        {%- if section.settings.body_line_3 != blank -%}
+          <br>{{ section.settings.body_line_3 | escape }}
+        {%- endif -%}
+      </p>
+      <dl class="editorial-collection-hero__metadata">
+        <div>
+          <dt>{{ section.settings.metadata_label_1 | escape }}:</dt>
+          <dd>{{ section.settings.metadata_value_1 | escape }}</dd>
+        </div>
+        <div>
+          <dt>{{ section.settings.metadata_label_2 | escape }}:</dt>
+          <dd>{{ section.settings.metadata_value_2 | escape }}</dd>
+        </div>
+        <div>
+          <dt>{{ section.settings.metadata_label_3 | escape }}:</dt>
+          <dd>{{ section.settings.metadata_value_3 | escape }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="editorial-collection-hero__media">
+      <img
+        src="{{ section.settings.hero_asset | asset_url }}"
+        alt=""
+        width="1536"
+        height="1024"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </div>
+  </div>
+
+  <div class="editorial-collection-inventory page-width">
+    <h2 class="editorial-collection-inventory__title">{{ section.settings.inventory_heading | escape }}</h2>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Editorial collection hero",
+  "tag": "section",
+  "class": "section editorial-collection-hero-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_asset",
+      "label": "Theme asset filename",
+      "default": "nbjc-current-objective-collection-hero.jpeg"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "CURRENT OBJECTIVE"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "Reduced-capacity operation."
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "Progress still counts."
+    },
+    {
+      "type": "text",
+      "id": "body_line_1",
+      "label": "Body line 1",
+      "default": "For days when the task list got smaller,"
+    },
+    {
+      "type": "text",
+      "id": "body_line_2",
+      "label": "Body line 2",
+      "default": "but the day still counts."
+    },
+    {
+      "type": "text",
+      "id": "body_line_3",
+      "label": "Body line 3"
+    },
+    {
+      "type": "text",
+      "id": "metadata_label_1",
+      "label": "Metadata label 1",
+      "default": "STATUS"
+    },
+    {
+      "type": "text",
+      "id": "metadata_value_1",
+      "label": "Metadata value 1",
+      "default": "ACTIVE"
+    },
+    {
+      "type": "text",
+      "id": "metadata_label_2",
+      "label": "Metadata label 2",
+      "default": "CAPACITY"
+    },
+    {
+      "type": "text",
+      "id": "metadata_value_2",
+      "label": "Metadata value 2",
+      "default": "LIMITED"
+    },
+    {
+      "type": "text",
+      "id": "metadata_label_3",
+      "label": "Metadata label 3",
+      "default": "SYSTEMS"
+    },
+    {
+      "type": "text",
+      "id": "metadata_value_3",
+      "label": "Metadata value 3",
+      "default": "FUNCTIONAL"
+    },
+    {
+      "type": "text",
+      "id": "inventory_heading",
+      "label": "Inventory heading",
+      "default": "AVAILABLE INVENTORY"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial collection hero"
+    }
+  ]
+}
+{% endschema %}
