@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link
   rel="stylesheet"
@@ -7,14 +6,6 @@
   media="print"
   onload="this.media='all'"
 >
-
-{%- if settings.predictive_search_enabled -%}
-  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-{%- endif -%}
-
-{%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-{%- endif -%}
 
 <style>
   header-drawer {
@@ -28,13 +19,11 @@
     }
   {%- endif -%}
 
-  {%- if section.settings.menu_type_desktop != "drawer" -%}
-    @media screen and (min-width: 990px) {
-      header-drawer {
-        display: none;
-      }
+  @media screen and (min-width: 990px) {
+    header-drawer {
+      display: none;
     }
-  {%- endif -%}
+  }
 
   .menu-drawer-container {
     display: flex;
@@ -102,14 +91,6 @@
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
-{%- liquid
-  for block in section.blocks
-    if block.type == '@app'
-      assign has_app_block = true
-    endif
-  endfor
--%}
-
 {% liquid
   assign header_tag = 'div'
 
@@ -124,28 +105,8 @@
   {% endif %}
   class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
 >
-  {%- liquid
-    assign social_links = false
-    assign localization_forms = false
-
-    if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank or settings.social_tiktok_link != blank or settings.social_tumblr_link != blank or settings.social_snapchat_link != blank
-      assign social_links = true
-    endif
-
-    if localization.available_countries.size > 1 and section.settings.enable_country_selector or section.settings.enable_language_selector and localization.available_languages.size > 1
-      assign localization_forms = true
-    endif
-  -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    {%- liquid
-      if section.settings.menu != blank
-        render 'header-drawer'
-      endif
-
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
-    -%}
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} header--has-menu page-width">
+    {% render 'header-drawer' %}
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -180,15 +141,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
+    {% render 'header-dropdown-menu' %}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -223,68 +176,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      <div class="desktop-localization-wrapper">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
-            {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {% endif %}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
-            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
-
-      {%- if shop.customer_accounts_enabled -%}
-        <a
-          href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
-          rel="nofollow"
-        >
-          {%- if section.settings.enable_customer_avatar -%}
-            <account-icon>
-              {%- if customer and customer.has_avatar? -%}
-                {{ customer | avatar }}
-              {%- else -%}
-                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-              {%- endif -%}
-            </account-icon>
-          {%- else -%}
-            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-          {%- endif -%}
-          <span class="visually-hidden">
-            {%- liquid
-              if customer
-                echo 'customer.account_fallback' | t
-              else
-                echo 'customer.log_in' | t
-              endif
-            -%}
-          </span>
-        </a>
-      {%- endif -%}
-
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {% render block %}
-        {%- endcase -%}
-      {%- endfor -%}
-
+    <div class="header__icons">
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {% if cart == empty %}
           <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>

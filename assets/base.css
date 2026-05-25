@@ -3734,3 +3734,108 @@ button.shopify-payment-button__button--unbranded {
 hr {
   background-color: var(--brand-rule);
 }
+
+/* Editorial header */
+.section-header .header-wrapper {
+  background: var(--brand-parchment);
+}
+
+.section-header .header {
+  column-gap: 2.8rem;
+}
+
+.section-header .header__heading-link {
+  padding: 0;
+}
+
+.section-header .header__heading-link .h2 {
+  color: rgb(var(--brand-ink-rgb));
+  font-size: 2.1rem;
+  letter-spacing: -0.035em;
+}
+
+.editorial-nav .list-menu--inline {
+  column-gap: 2.7rem;
+}
+
+.editorial-nav .header__menu-item {
+  color: rgba(var(--brand-ink-rgb), 0.72);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  padding: 1rem 0;
+}
+
+.editorial-nav .header__menu-item:hover {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.editorial-nav .header__menu-item:hover span {
+  text-decoration-color: rgba(var(--brand-accent-rgb), 0.55);
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.7rem;
+}
+
+.section-header .header__icons {
+  padding-right: 0;
+}
+
+.section-header .header__icon,
+.section-header .header__icon .svg-wrapper,
+.section-header .header__icon--cart .icon {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.section-header .header__icon .icon {
+  height: 1.7rem;
+  width: 1.7rem;
+}
+
+.section-header .header__icon--cart {
+  margin-right: 0;
+}
+
+.section-header .header__icon:hover .icon {
+  transform: none;
+  color: rgb(var(--brand-accent-rgb));
+}
+
+.section-header .cart-count-bubble {
+  background-color: rgb(var(--brand-accent-rgb));
+  color: rgb(var(--brand-parchment-rgb));
+}
+
+@media screen and (max-width: 989px) {
+  .section-header .header {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 1.2rem;
+  }
+
+  .section-header header-drawer {
+    margin-left: -0.8rem;
+  }
+
+  .section-header .menu-drawer {
+    border-top: 0.1rem solid var(--brand-rule);
+    box-shadow: none;
+  }
+
+  .section-header .menu-drawer__navigation {
+    padding: 2.8rem 0;
+  }
+
+  .section-header .menu-drawer__menu-item {
+    color: rgba(var(--brand-ink-rgb), 0.78);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.17em;
+    padding: 1.4rem 3rem;
+  }
+
+  .section-header .menu-drawer__menu-item:hover,
+  .section-header .menu-drawer__menu-item:focus {
+    background-color: transparent;
+    color: rgb(var(--brand-ink-rgb));
+  }
+}
