@@ -1,6 +1,6 @@
 .editorial-hero {
   color: var(--brand-parchment);
-  min-height: clamp(54rem, calc(100svh - var(--header-height, 0px)), 72rem);
+  min-height: clamp(50rem, calc(86svh - var(--header-height, 0px)), 64rem);
   position: relative;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: 50% 68%;
 }
 
 .editorial-hero__content {
@@ -91,7 +91,7 @@
 @media screen and (max-width: 749px) {
   .editorial-hero {
     align-items: flex-end;
-    min-height: min(68svh, 54rem);
+    min-height: clamp(44rem, 62svh, 50rem);
   }
 
   .editorial-hero__media::after {
@@ -100,7 +100,7 @@
   }
 
   .editorial-hero__image {
-    object-position: 59% center;
+    object-position: 47% 72%;
   }
 
   .editorial-hero__content {
