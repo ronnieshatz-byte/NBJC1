@@ -33,9 +33,9 @@
 .field-guide__hero-inner {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(30rem, 0.8fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(30rem, 0.72fr) minmax(0, 1.32fr);
   align-items: center;
-  min-height: clamp(43rem, 46vw, 58rem);
+  min-height: clamp(40rem, 42vw, 53rem);
 }
 
 .field-guide__hero-copy {
@@ -64,9 +64,9 @@
 
 .field-guide__hero-media {
   align-self: stretch;
-  height: clamp(43rem, 46vw, 58rem);
+  height: clamp(40rem, 42vw, 53rem);
   margin-right: calc((100vw - min(var(--page-width), 100vw)) / -2 - 5rem);
-  margin-left: clamp(-12rem, -10vw, -6rem);
+  margin-left: clamp(-14rem, -11vw, -7rem);
 }
 
 .field-guide__hero-media img {
@@ -75,20 +75,20 @@
   height: 100%;
   object-fit: cover;
   object-position: center right;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.32) 19%, #000 45%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.32) 19%, #000 45%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.18) 19%, rgba(0, 0, 0, 0.76) 39%, #000 54%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.18) 19%, rgba(0, 0, 0, 0.76) 39%, #000 54%);
 }
 
 .field-guide__intro {
-  padding: clamp(4rem, 5vw, 6rem) 0;
+  padding: clamp(3.8rem, 4.5vw, 5.2rem) 0;
   border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
 }
 
 .field-guide__intro-inner {
   display: grid;
-  grid-template-columns: minmax(29rem, 0.98fr) minmax(24rem, 0.64fr) minmax(26rem, 0.78fr);
+  grid-template-columns: minmax(30rem, 0.98fr) minmax(31rem, 0.92fr);
   align-items: center;
-  gap: clamp(2.2rem, 4vw, 5rem);
+  gap: clamp(3.2rem, 6vw, 7rem);
 }
 
 .field-guide__intro-copy {
@@ -108,17 +108,25 @@
 }
 
 .field-guide__intro-media {
-  height: clamp(23rem, 23vw, 31rem);
+  height: clamp(25rem, 25vw, 32rem);
 }
 
 .field-guide__intro-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
+  opacity: 0.94;
+}
+
+.field-guide__acknowledgment-wrap {
+  padding: clamp(3rem, 3.8vw, 4.4rem) 0;
+  border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
 }
 
 .field-guide__acknowledgment {
-  padding-left: clamp(1.8rem, 3vw, 4rem);
+  max-width: 58rem;
+  padding-left: clamp(1.8rem, 3vw, 2.8rem);
   border-left: 0.1rem solid rgba(var(--brand-ink-rgb), 0.18);
 }
 
@@ -141,7 +149,7 @@
 }
 
 .field-guide__states {
-  padding: clamp(4.6rem, 6vw, 7rem) 0;
+  padding: clamp(4.2rem, 5vw, 6rem) 0;
 }
 
 .field-guide__states-header {
@@ -173,18 +181,16 @@
 }
 
 .field-guide__state-grid {
-  border: 0.1rem solid rgba(var(--brand-ink-rgb), 0.14);
+  border-top: 0.1rem solid rgba(var(--brand-ink-rgb), 0.16);
+  border-left: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
+  border-right: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
 }
 
 .field-guide-state {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  min-height: clamp(28rem, 30vw, 37rem);
-  border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.14);
-}
-
-.field-guide-state:last-child {
-  border-bottom: 0;
+  min-height: clamp(25rem, 26vw, 32rem);
+  border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.16);
 }
 
 .field-guide-state__media {
@@ -206,7 +212,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(3rem, 4vw, 5rem);
+  padding: clamp(2.7rem, 3.4vw, 4.3rem);
 }
 
 .field-guide-state__number {
@@ -263,7 +269,7 @@
 }
 
 .field-guide__make {
-  padding: clamp(1rem, 2vw, 2.4rem) 0 clamp(4.8rem, 6vw, 7rem);
+  padding: clamp(1.2rem, 2vw, 2.4rem) 0 clamp(4.2rem, 5.4vw, 6rem);
 }
 
 .field-guide__make-inner {
@@ -314,7 +320,9 @@
 }
 
 .field-guide__make-media {
-  height: clamp(33rem, 34vw, 42rem);
+  justify-self: end;
+  width: min(100%, 24rem);
+  height: clamp(27rem, 27vw, 34rem);
 }
 
 .field-guide__make-media img {
@@ -322,6 +330,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  opacity: 0.95;
 }
 
 .field-guide__closing {
@@ -332,7 +342,7 @@
   display: grid;
   grid-template-columns: minmax(31rem, 0.92fr) minmax(0, 1.08fr);
   align-items: center;
-  min-height: clamp(32rem, 35vw, 46rem);
+  min-height: clamp(29rem, 31vw, 40rem);
 }
 
 .field-guide__closing-copy {
@@ -369,7 +379,7 @@
 
 .field-guide__closing-media {
   align-self: stretch;
-  height: clamp(32rem, 35vw, 46rem);
+  height: clamp(29rem, 31vw, 40rem);
   margin-right: calc((100vw - min(var(--page-width), 100vw)) / -2 - 5rem);
   margin-left: clamp(-8rem, -6vw, -3rem);
 }
@@ -379,17 +389,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 50%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 50%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.26) 22%, rgba(0, 0, 0, 0.78) 43%, #000 57%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.26) 22%, rgba(0, 0, 0, 0.78) 43%, #000 57%);
 }
 
 @media screen and (max-width: 989px) {
   .field-guide__intro-inner,
   .field-guide__make-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.2rem;
   }
 
-  .field-guide__acknowledgment,
   .field-guide__make-media {
     grid-column: 1 / -1;
   }
@@ -413,6 +423,10 @@
     padding: 4.2rem 0 3.2rem;
   }
 
+  .field-guide__hero-inner {
+    min-height: 0;
+  }
+
   .field-guide__hero-heading {
     font-size: clamp(3.7rem, 12vw, 4.5rem);
   }
@@ -429,7 +443,7 @@
   }
 
   .field-guide__intro {
-    padding: 4rem 0;
+    padding: 3.6rem 0;
   }
 
   .field-guide__intro-copy {
@@ -446,14 +460,21 @@
   }
 
   .field-guide__acknowledgment {
-    grid-column: auto;
     padding-left: 0;
     border-left: 0;
+  }
+
+  .field-guide__acknowledgment-wrap {
+    padding: 3.2rem 0;
   }
 
   .field-guide__states-header {
     display: block;
     margin-bottom: 3.2rem;
+  }
+
+  .field-guide__states {
+    padding: 3.8rem 0;
   }
 
   .field-guide__states-header h2 {
@@ -491,7 +512,9 @@
 
   .field-guide__make-media {
     grid-column: auto;
-    height: min(78vw, 36rem);
+    justify-self: start;
+    width: min(68vw, 24rem);
+    height: min(82vw, 32rem);
   }
 
   .field-guide__closing-inner {
