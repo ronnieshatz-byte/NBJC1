@@ -1,0 +1,93 @@
+{{ 'section-editorial-collections.css' | asset_url | stylesheet_tag }}
+
+<div class="editorial-collections color-scheme-1 gradient" aria-labelledby="EditorialCollectionsHeading">
+  <div class="editorial-collections__inner page-width">
+    <div class="editorial-collections__header">
+      <div>
+        <p class="editorial-collections__eyebrow">COLLECTIONS</p>
+        <h2 class="editorial-collections__heading" id="EditorialCollectionsHeading">A few familiar conditions.</h2>
+      </div>
+      <a href="{{ routes.collections_url }}" class="editorial-collections__all-link">
+        EXPLORE ALL COLLECTIONS &rarr;
+      </a>
+    </div>
+
+    <div class="editorial-collections__grid">
+      <article class="editorial-collection">
+        <div class="editorial-collection__media">
+          <img
+            src="{{ 'collection-current-objective.jpg' | asset_url }}"
+            alt=""
+            width="1535"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="editorial-collection__title">Current Objective</h3>
+        <p class="editorial-collection__description">Reduced-capacity operation.<br>Progress still counts.</p>
+        <a href="/collections/current-objective" class="editorial-collection__link">VIEW COLLECTION &rarr;</a>
+      </article>
+
+      <article class="editorial-collection">
+        <div class="editorial-collection__media">
+          <img
+            src="{{ 'collection-emotional-damage.jpg' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="editorial-collection__title">Emotional Damage</h3>
+        <p class="editorial-collection__description">Internal buffering in progress.<br>Consequences acknowledged.</p>
+        <a href="/collections/emotional-damage" class="editorial-collection__link">VIEW COLLECTION &rarr;</a>
+      </article>
+
+      <article class="editorial-collection">
+        <div class="editorial-collection__media">
+          <img
+            src="{{ 'collection-side-quests.jpg' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="editorial-collection__title">Side Quests</h3>
+        <p class="editorial-collection__description">Rerouted accidentally.<br>Continuing anyway.</p>
+        <a href="/collections/side-quests" class="editorial-collection__link">VIEW COLLECTION &rarr;</a>
+      </article>
+
+      <article class="editorial-collection">
+        <div class="editorial-collection__media">
+          <img
+            src="{{ 'collection-recalibrating.jpg' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <h3 class="editorial-collection__title">Recalibrating</h3>
+        <p class="editorial-collection__description">Demand levels temporarily lowered.</p>
+        <a href="/collections/recalibrating" class="editorial-collection__link">VIEW COLLECTION &rarr;</a>
+      </article>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Editorial collections",
+  "tag": "section",
+  "class": "section editorial-collections-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "presets": [
+    {
+      "name": "Editorial collections"
+    }
+  ]
+}
+{% endschema %}
