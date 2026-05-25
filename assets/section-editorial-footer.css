@@ -9,7 +9,11 @@
   grid-template-columns: 1.12fr 0.78fr 0.9fr 1.28fr;
   gap: 4.2rem;
   padding-top: 3.7rem;
-  padding-bottom: 3.8rem;
+  padding-bottom: 5rem;
+}
+
+.editorial-footer__inner > * {
+  min-width: 0;
 }
 
 .editorial-footer__mark {
@@ -78,9 +82,11 @@
 .editorial-footer__field {
   align-items: center;
   border: 0.1rem solid rgba(var(--brand-parchment-rgb), 0.3);
+  box-sizing: border-box;
   display: flex;
   height: 4.3rem;
   max-width: 30rem;
+  width: 100%;
 }
 
 .editorial-footer__field input {
@@ -166,7 +172,7 @@
   .editorial-footer__inner {
     display: block;
     padding-top: 3.2rem;
-    padding-bottom: 3.4rem;
+    padding-bottom: 4.8rem;
   }
 
   .editorial-footer__brand,

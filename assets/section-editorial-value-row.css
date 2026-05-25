@@ -18,7 +18,7 @@
 }
 
 .editorial-value + .editorial-value {
-  border-left: 0.1rem solid rgba(var(--brand-ink-rgb), 0.08);
+  border-left: 0.1rem solid rgba(var(--brand-accent-rgb), 0.09);
 }
 
 .editorial-value__icon {
@@ -71,7 +71,7 @@
   }
 
   .editorial-value:nth-child(n + 3) {
-    border-top: 0.1rem solid rgba(var(--brand-ink-rgb), 0.08);
+    border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.09);
   }
 
   .editorial-value__copy {
