@@ -1,0 +1,165 @@
+{{ 'section-main-operational-states.css' | asset_url | stylesheet_tag }}
+
+<div class="operational-states color-scheme-1 gradient">
+  <section class="operational-states__hero" aria-labelledby="OperationalStatesTitle">
+    <div class="operational-states__hero-inner page-width">
+      <div class="operational-states__hero-copy">
+        <p class="operational-states__eyebrow">OPERATIONAL STATES</p>
+        <h1 class="operational-states__hero-heading" id="OperationalStatesTitle">
+          A few<br>
+          familiar conditions.
+        </h1>
+        <span class="operational-states__rule" aria-hidden="true"></span>
+        <p class="operational-states__body">
+          Some days are mostly logistics.<br>
+          Some days are damage control.<br>
+          Some days reroute themselves.<br>
+          Some days require fewer inputs.
+        </p>
+        <p class="operational-states__body operational-states__body--closing">Start where applicable.</p>
+      </div>
+
+      <div class="operational-states__hero-media">
+        <img
+          src="{{ 'nbjc-operational-states-hero.png' | asset_url }}"
+          alt=""
+          width="1536"
+          height="1024"
+          loading="eager"
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="operational-states__entries" aria-label="Operational state collections">
+    <div class="operational-states__grid page-width">
+      <article class="operational-entry">
+        <div class="operational-entry__media">
+          <img
+            src="{{ 'nbjc-operational-current-objective.png' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <div class="operational-entry__content">
+          <p class="operational-entry__number">01</p>
+          <div class="operational-entry__title-row">
+            <h2>Current Objective</h2>
+            <a href="/collections/current-objective" class="operational-entry__arrow" aria-label="View Current Objective">&rarr;</a>
+          </div>
+          <p class="operational-entry__description">Reduced-capacity operation.<br>Progress still counts.</p>
+          <dl class="operational-entry__metrics">
+            <div><dt>Status</dt><dd>Active</dd></div>
+            <div><dt>Capacity</dt><dd>Limited</dd></div>
+            <div><dt>Systems</dt><dd>Functional</dd></div>
+          </dl>
+          <a href="/collections/current-objective" class="operational-entry__link">VIEW CURRENT OBJECTIVE &rarr;</a>
+        </div>
+      </article>
+
+      <article class="operational-entry">
+        <div class="operational-entry__media">
+          <img
+            src="{{ 'nbjc-operational-side-quests.png' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <div class="operational-entry__content">
+          <p class="operational-entry__number">02</p>
+          <div class="operational-entry__title-row">
+            <h2>Side Quests</h2>
+            <a href="/collections/side-quests" class="operational-entry__arrow" aria-label="View Side Quests">&rarr;</a>
+          </div>
+          <p class="operational-entry__description">Rerouted accidentally.<br>Continuing anyway.</p>
+          <dl class="operational-entry__metrics">
+            <div><dt>Status</dt><dd>Active</dd></div>
+            <div><dt>Capacity</dt><dd>Variable</dd></div>
+            <div><dt>Focus</dt><dd>Scattered</dd></div>
+          </dl>
+          <a href="/collections/side-quests" class="operational-entry__link">VIEW SIDE QUESTS &rarr;</a>
+        </div>
+      </article>
+
+      <article class="operational-entry">
+        <div class="operational-entry__media">
+          <img
+            src="{{ 'nbjc-operational-recalibrating.png' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <div class="operational-entry__content">
+          <p class="operational-entry__number">03</p>
+          <div class="operational-entry__title-row">
+            <h2>Recalibrating</h2>
+            <a href="/collections/recalibrating" class="operational-entry__arrow" aria-label="View Recalibrating">&rarr;</a>
+          </div>
+          <p class="operational-entry__description">Demand levels temporarily lowered.<br>Systems adjusting.</p>
+          <dl class="operational-entry__metrics">
+            <div><dt>Status</dt><dd>Temporary</dd></div>
+            <div><dt>Energy</dt><dd>Conserving</dd></div>
+            <div><dt>Outlook</dt><dd>TBD</dd></div>
+          </dl>
+          <a href="/collections/recalibrating" class="operational-entry__link">VIEW RECALIBRATING &rarr;</a>
+        </div>
+      </article>
+
+      <article class="operational-entry">
+        <div class="operational-entry__media">
+          <img
+            src="{{ 'nbjc-operational-emotional-damage.png' | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="lazy"
+          >
+        </div>
+        <div class="operational-entry__content">
+          <p class="operational-entry__number">04</p>
+          <div class="operational-entry__title-row">
+            <h2>Emotional Damage</h2>
+            <a href="/collections/emotional-damage" class="operational-entry__arrow" aria-label="View Emotional Damage">&rarr;</a>
+          </div>
+          <p class="operational-entry__description">Internal buffering in progress.<br>Consequences acknowledged.</p>
+          <dl class="operational-entry__metrics">
+            <div><dt>Status</dt><dd>Ongoing</dd></div>
+            <div><dt>Capacity</dt><dd>Fragile</dd></div>
+            <div><dt>Support</dt><dd>Snacks</dd></div>
+          </dl>
+          <a href="/collections/emotional-damage" class="operational-entry__link">VIEW EMOTIONAL DAMAGE &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="operational-states__start" aria-labelledby="OperationalStatesStartHeading">
+    <div class="operational-states__start-inner page-width">
+      <h2 id="OperationalStatesStartHeading">Not sure where to start?</h2>
+      <p>Current Objective is usually a safe entry point.</p>
+      <a href="/collections/current-objective" class="operational-states__start-link">START WITH CURRENT OBJECTIVE &rarr;</a>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Operational States page",
+  "tag": "section",
+  "class": "section operational-states-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "presets": [
+    {
+      "name": "Operational States page"
+    }
+  ]
+}
+{% endschema %}
