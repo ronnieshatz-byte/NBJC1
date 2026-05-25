@@ -9,10 +9,16 @@
       "type": "editorial-collections",
       "settings": {
       }
+    },
+    "editorial_field_notes": {
+      "type": "editorial-field-notes",
+      "settings": {
+      }
     }
   },
   "order": [
     "editorial_hero",
-    "editorial_collections"
+    "editorial_collections",
+    "editorial_field_notes"
   ]
 }

@@ -1,0 +1,47 @@
+{{ 'section-editorial-field-notes.css' | asset_url | stylesheet_tag }}
+
+<div class="field-notes color-scheme-1 gradient" aria-labelledby="FieldNotesHeading">
+  <div class="field-notes__inner page-width">
+    <div class="field-notes__copy">
+      <p class="field-notes__eyebrow">FIELD NOTES</p>
+      <h2 class="field-notes__heading" id="FieldNotesHeading">
+        Mostly stickers.<br>
+        Occasionally emotional infrastructure.
+      </h2>
+      <p class="field-notes__body">
+        For open tabs,<br>
+        side quests,<br>
+        half-finished systems,<br>
+        and functioning approximately.
+      </p>
+      <a class="field-notes__link" href="/pages/field-guide">ABOUT THE BRAND &rarr;</a>
+    </div>
+
+    <div class="field-notes__media">
+      <img
+        class="field-notes__image"
+        src="{{ 'field_guide_fade_image.png' | asset_url }}"
+        alt=""
+        width="1536"
+        height="1024"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Editorial field notes",
+  "tag": "section",
+  "class": "section editorial-field-notes-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "presets": [
+    {
+      "name": "Editorial field notes"
+    }
+  ]
+}
+{% endschema %}
