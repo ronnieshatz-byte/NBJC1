@@ -21,6 +21,24 @@
   background: transparent;
 }
 
+.nbjc-product-page .thumbnail-slider {
+  margin-top: 1.4rem;
+}
+
+.nbjc-product-page .thumbnail {
+  opacity: 0.86;
+}
+
+.nbjc-product-page .thumbnail:hover {
+  opacity: 1;
+}
+
+.nbjc-product-page .thumbnail[aria-current] {
+  border-color: rgba(var(--brand-accent-rgb), 0.42);
+  box-shadow: 0 0 0 0.1rem rgba(var(--brand-accent-rgb), 0.32);
+  opacity: 1;
+}
+
 .nbjc-product-page .product__info-container {
   max-width: 47rem;
 }
