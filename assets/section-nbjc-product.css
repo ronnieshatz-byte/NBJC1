@@ -1,0 +1,282 @@
+/* NBJC product presentation layered over Dawn's product functionality. */
+.nbjc-main-product-section,
+.nbjc-product-page,
+.nbjc-main-product-section + .section > .gradient {
+  background: var(--brand-parchment);
+}
+
+.nbjc-product-page {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-product-page .product {
+  align-items: start;
+  gap: clamp(3rem, 5.2vw, 7rem);
+}
+
+.nbjc-product-page .product__media-wrapper .global-media-settings,
+.nbjc-product-page .product-media-container,
+.nbjc-product-page .thumbnail {
+  background: var(--brand-parchment-soft);
+  border: 0;
+  box-shadow: none;
+}
+
+.nbjc-product-page .product__media-wrapper .media {
+  background: transparent;
+}
+
+.nbjc-product-page .product__info-container {
+  max-width: 47rem;
+}
+
+.nbjc-product-page .product__info-container > * + * {
+  margin: 1.55rem 0;
+}
+
+.nbjc-product-page .product__text.caption-with-letter-spacing {
+  color: rgba(var(--brand-ink-rgb), 0.66);
+  font-family: var(--font-body-family);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  margin-bottom: 2.1rem;
+}
+
+.nbjc-product-page .product__title h1 {
+  color: rgb(var(--brand-ink-rgb));
+  font-family: var(--font-heading-family);
+  font-size: clamp(3.6rem, 4vw, 4.8rem);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: -0.045em;
+  line-height: 1.14;
+}
+
+.nbjc-product-page .price--large {
+  color: rgb(var(--brand-ink-rgb));
+  font-family: var(--font-body-family);
+  font-size: 2rem;
+  letter-spacing: 0.01em;
+}
+
+.nbjc-product-page .product__tax,
+.nbjc-product-page .installment {
+  color: rgba(var(--brand-ink-rgb), 0.64);
+  font-family: var(--font-body-family);
+}
+
+.nbjc-product-note {
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.2);
+  color: rgba(var(--brand-ink-rgb), 0.72);
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: 1.7;
+  padding: 0.6rem 0 2rem;
+}
+
+.nbjc-product-page .product-form__input .form__label,
+.nbjc-product-page .quantity__label {
+  color: rgba(var(--brand-ink-rgb), 0.66);
+  font-family: var(--font-body-family);
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nbjc-product-page .product-form__input input[type='radio'] + label,
+.nbjc-product-page .quantity {
+  background: transparent;
+  border-color: rgba(var(--brand-accent-rgb), 0.3);
+  box-shadow: none;
+}
+
+.nbjc-product-page .product-form__input input[type='radio']:checked + label {
+  background: rgb(var(--brand-ink-rgb));
+  border-color: rgb(var(--brand-ink-rgb));
+  color: var(--brand-parchment);
+}
+
+.nbjc-product-page .product-form__submit.button {
+  --color-button: var(--brand-ink-rgb);
+  --color-button-text: 243, 238, 230;
+  background: rgb(var(--brand-ink-rgb));
+  border: 0;
+  color: var(--brand-parchment);
+  font-family: var(--font-body-family);
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+}
+
+.nbjc-product-page .product-form__submit.button::after,
+.nbjc-product-page .product-form__submit.button::before {
+  box-shadow: none;
+}
+
+.nbjc-product-page .shopify-payment-button__button--unbranded {
+  background: transparent;
+  border: 0.1rem solid rgba(var(--brand-ink-rgb), 0.42);
+  color: rgb(var(--brand-ink-rgb));
+  font-family: var(--font-body-family);
+}
+
+.nbjc-product-page .share-button__button {
+  color: rgba(var(--brand-ink-rgb), 0.64);
+  font-family: var(--font-body-family);
+}
+
+.nbjc-product-field-note,
+.nbjc-product-accordions {
+  margin: 0 auto;
+  max-width: var(--page-width);
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.nbjc-product-field-note {
+  border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.19);
+  margin-top: clamp(4.4rem, 6vw, 6.8rem);
+  padding-top: clamp(2.8rem, 4vw, 3.8rem);
+}
+
+.nbjc-product-field-note__inner {
+  display: grid;
+  gap: clamp(3rem, 6vw, 7rem);
+  grid-template-columns: minmax(22rem, 0.8fr) minmax(30rem, 1.2fr);
+}
+
+.nbjc-product-field-note__inner--solo {
+  display: block;
+  max-width: 43rem;
+}
+
+.nbjc-product-label {
+  color: rgba(var(--brand-ink-rgb), 0.62);
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  margin: 0 0 1.8rem;
+}
+
+.nbjc-product-field-note__text {
+  color: rgba(var(--brand-ink-rgb), 0.76);
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  line-height: 1.72;
+  margin: 0;
+}
+
+.nbjc-product-details {
+  border-left: 0.1rem solid rgba(var(--brand-accent-rgb), 0.2);
+  display: grid;
+  gap: 2.3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-left: clamp(2.5rem, 4vw, 4rem);
+}
+
+.nbjc-product-details__text {
+  color: rgba(var(--brand-ink-rgb), 0.7);
+  font-family: var(--font-body-family);
+  font-size: 1.35rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.nbjc-product-accordions {
+  margin-top: clamp(2.8rem, 4vw, 4rem);
+}
+
+.nbjc-product-accordions .accordion {
+  border-color: rgba(var(--brand-accent-rgb), 0.2);
+  margin-top: 0;
+}
+
+.nbjc-product-accordions .accordion__title {
+  color: rgba(var(--brand-ink-rgb), 0.72);
+  font-family: var(--font-body-family);
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+.nbjc-product-accordions .accordion__content {
+  color: rgba(var(--brand-ink-rgb), 0.72);
+  font-family: var(--font-body-family);
+  font-size: 1.42rem;
+  line-height: 1.7;
+}
+
+.nbjc-main-product-section + .section .related-products {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-main-product-section + .section .related-products__heading {
+  color: rgb(var(--brand-ink-rgb));
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.4rem, 2.8vw, 3rem);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: -0.03em;
+}
+
+.nbjc-main-product-section + .section .card__inner {
+  background: var(--brand-parchment-soft);
+  box-shadow: none;
+}
+
+.nbjc-main-product-section + .section .card__heading {
+  color: rgba(var(--brand-ink-rgb), 0.9);
+  font-family: var(--font-body-family);
+  font-weight: 400;
+}
+
+.nbjc-main-product-section + .section .card-information > .price {
+  color: rgba(var(--brand-ink-rgb), 0.72);
+  font-family: var(--font-body-family);
+}
+
+@media screen and (max-width: 749px) {
+  .nbjc-product-page .product {
+    gap: 2.4rem;
+  }
+
+  .nbjc-product-page .product__title h1 {
+    font-size: clamp(3rem, 9vw, 3.7rem);
+  }
+
+  .nbjc-product-page .product__info-container > * + * {
+    margin: 1.35rem 0;
+  }
+
+  .nbjc-product-field-note,
+  .nbjc-product-accordions {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .nbjc-product-field-note {
+    margin-top: 3.4rem;
+    padding-top: 2.6rem;
+  }
+
+  .nbjc-product-field-note__inner {
+    display: block;
+  }
+
+  .nbjc-product-details {
+    border-left: 0;
+    border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.2);
+    grid-template-columns: 1fr;
+    margin-top: 2.6rem;
+    padding: 2.4rem 0 0;
+  }
+
+  .nbjc-product-accordions {
+    margin-top: 2.8rem;
+  }
+
+  .nbjc-main-product-section + .section .related-products {
+    padding-top: 2.8rem;
+  }
+}
