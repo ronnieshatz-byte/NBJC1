@@ -95,7 +95,17 @@
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
-                  {{- block.settings.text -}}
+                  {%- if block.id == 'vendor' -%}
+                    {%- if product.metafields.nbjc.state_label.value != blank -%}
+                      {{- product.metafields.nbjc.state_label.value | escape -}}
+                    {%- elsif product.vendor != blank -%}
+                      {{- product.vendor | escape -}}
+                    {%- else -%}
+                      NOT BROKEN. JUST CUSTOM.
+                    {%- endif -%}
+                  {%- else -%}
+                    {{- block.settings.text -}}
+                  {%- endif -%}
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
@@ -141,9 +151,9 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
-                {%- if product.metafields.custom.short_product_note != blank -%}
+                {%- if product.metafields.nbjc.short_product_note.value != blank -%}
                   <div class="nbjc-product-note rte">
-                    {{ product.metafields.custom.short_product_note | metafield_tag }}
+                    {{ product.metafields.nbjc.short_product_note.value | escape | newline_to_br }}
                   </div>
                 {%- endif -%}
               {%- when 'inventory' -%}
@@ -688,25 +698,13 @@
 
     {%- assign description_blocks = section.blocks | where: 'type', 'description' -%}
     {%- assign description_block = description_blocks | first -%}
-    {%- liquid
-      assign product_title_downcase = product.title | downcase
-      assign product_type_downcase = product.type | downcase
-      assign has_sticker_use_fallback = false
-      if product_title_downcase contains 'sticker' or product_type_downcase contains 'sticker'
-        assign has_sticker_use_fallback = true
-      endif
-      assign has_product_details = false
-      if product.metafields.custom.material != blank or product.metafields.custom['size'] != blank or product.metafields.custom.placement_use_note != blank or has_sticker_use_fallback
-        assign has_product_details = true
-      endif
-    -%}
     <section class="nbjc-product-field-note quick-add-hidden" aria-label="Field note and product details">
-      <div class="nbjc-product-field-note__inner{% unless has_product_details %} nbjc-product-field-note__inner--solo{% endunless %}">
+      <div class="nbjc-product-field-note__inner">
         <div class="nbjc-product-field-note__copy">
           <p class="nbjc-product-label">FIELD NOTE</p>
-          {%- if product.metafields.custom.field_note != blank -%}
+          {%- if product.metafields.nbjc.field_note.value != blank -%}
             <div class="nbjc-product-field-note__text rte">
-              {{ product.metafields.custom.field_note | metafield_tag }}
+              {{ product.metafields.nbjc.field_note.value | escape | newline_to_br }}
             </div>
           {%- else -%}
             <p class="nbjc-product-field-note__text">
@@ -717,112 +715,114 @@
           {%- endif -%}
         </div>
 
-        {%- if has_product_details -%}
-          <div class="nbjc-product-details">
-          {%- if product.metafields.custom.material != blank -%}
-            <div class="nbjc-product-details__item">
-              <p class="nbjc-product-label">MATERIAL</p>
-              <div class="nbjc-product-details__text rte">
-                {{ product.metafields.custom.material | metafield_tag }}
-              </div>
+        <div class="nbjc-product-details">
+          <div class="nbjc-product-details__item">
+            <p class="nbjc-product-label">MATERIAL</p>
+            <div class="nbjc-product-details__text rte">
+              {%- if product.metafields.nbjc.material.value != blank -%}
+                {{ product.metafields.nbjc.material.value | escape | newline_to_br }}
+              {%- else -%}
+                <p>Matte vinyl sticker</p>
+              {%- endif -%}
             </div>
-          {%- endif -%}
-          {%- if product.metafields.custom['size'] != blank -%}
+          </div>
+          {%- if product.metafields.nbjc.size.value != blank -%}
             <div class="nbjc-product-details__item">
               <p class="nbjc-product-label">SIZE</p>
               <div class="nbjc-product-details__text rte">
-                {{ product.metafields.custom['size'] | metafield_tag }}
+                {{ product.metafields.nbjc.size.value | escape | newline_to_br }}
               </div>
             </div>
           {%- endif -%}
-          {%- if product.metafields.custom.placement_use_note != blank or has_sticker_use_fallback -%}
-            <div class="nbjc-product-details__item">
-              <p class="nbjc-product-label">USE</p>
-              <div class="nbjc-product-details__text rte">
-                {%- if product.metafields.custom.placement_use_note != blank -%}
-                  {{ product.metafields.custom.placement_use_note | metafield_tag }}
-                {%- else -%}
-                  <p>
-                    Laptop, notebook, water bottle,<br>
-                    or any surface witnessing the situation.
-                  </p>
-                {%- endif -%}
-              </div>
+          <div class="nbjc-product-details__item">
+            <p class="nbjc-product-label">USE</p>
+            <div class="nbjc-product-details__text rte">
+              {%- if product.metafields.nbjc.use_note.value != blank -%}
+                {{ product.metafields.nbjc.use_note.value | escape | newline_to_br }}
+              {%- else -%}
+                <p>
+                  Laptop, notebook, water bottle,<br>
+                  or any surface witnessing the situation.
+                </p>
+              {%- endif -%}
             </div>
-          {%- endif -%}
           </div>
-        {%- endif -%}
+        </div>
       </div>
     </section>
 
-    {%- if description_blocks.size > 0
-      or shop.shipping_policy.body != blank
-      or shop.refund_policy.body != blank
-      or product.metafields.custom.care != blank
-    -%}
-      <div class="nbjc-product-accordions quick-add-hidden">
-        {%- if description_blocks.size > 0 and product.description != blank -%}
-          <div class="product__accordion accordion" {{ description_block.shopify_attributes }}>
-            <details id="Details-description-{{ section.id }}">
-              <summary>
-                <div class="summary__title">
-                  <h2 class="h4 accordion__title">DETAILS</h2>
-                </div>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <div class="accordion__content rte nbjc-product-accordions__details" id="ProductAccordion-description-{{ section.id }}">
-                {{ product.description }}
+    <div class="nbjc-product-accordions quick-add-hidden">
+      {%- if description_blocks.size > 0 and product.description != blank -%}
+        <div class="product__accordion accordion" {{ description_block.shopify_attributes }}>
+          <details id="Details-description-{{ section.id }}">
+            <summary>
+              <div class="summary__title">
+                <h2 class="h4 accordion__title">DETAILS</h2>
               </div>
-            </details>
-          </div>
-        {%- endif -%}
-        {%- if shop.shipping_policy.body != blank -%}
-          <div class="product__accordion accordion">
-            <details id="Details-shipping-{{ section.id }}">
-              <summary>
-                <div class="summary__title">
-                  <h2 class="h4 accordion__title">SHIPPING</h2>
-                </div>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <div class="accordion__content rte" id="ProductAccordion-shipping-{{ section.id }}">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </summary>
+            <div class="accordion__content rte nbjc-product-accordions__details" id="ProductAccordion-description-{{ section.id }}">
+              {{ product.description }}
+            </div>
+          </details>
+        </div>
+      {%- endif -%}
+      {%- if product.metafields.nbjc.shipping_note.value != blank or shop.shipping_policy.body != blank -%}
+        <div class="product__accordion accordion">
+          <details id="Details-shipping-{{ section.id }}">
+            <summary>
+              <div class="summary__title">
+                <h2 class="h4 accordion__title">SHIPPING</h2>
+              </div>
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </summary>
+            <div class="accordion__content rte" id="ProductAccordion-shipping-{{ section.id }}">
+              {%- if product.metafields.nbjc.shipping_note.value != blank -%}
+                {{ product.metafields.nbjc.shipping_note.value | escape | newline_to_br }}
+              {%- else -%}
                 {{ shop.shipping_policy.body }}
+              {%- endif -%}
+            </div>
+          </details>
+        </div>
+      {%- endif -%}
+      {%- if product.metafields.nbjc.returns_note.value != blank or shop.refund_policy.body != blank -%}
+        <div class="product__accordion accordion">
+          <details id="Details-returns-{{ section.id }}">
+            <summary>
+              <div class="summary__title">
+                <h2 class="h4 accordion__title">RETURNS</h2>
               </div>
-            </details>
-          </div>
-        {%- endif -%}
-        {%- if shop.refund_policy.body != blank -%}
-          <div class="product__accordion accordion">
-            <details id="Details-returns-{{ section.id }}">
-              <summary>
-                <div class="summary__title">
-                  <h2 class="h4 accordion__title">RETURNS</h2>
-                </div>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <div class="accordion__content rte" id="ProductAccordion-returns-{{ section.id }}">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </summary>
+            <div class="accordion__content rte" id="ProductAccordion-returns-{{ section.id }}">
+              {%- if product.metafields.nbjc.returns_note.value != blank -%}
+                {{ product.metafields.nbjc.returns_note.value | escape | newline_to_br }}
+              {%- else -%}
                 {{ shop.refund_policy.body }}
-              </div>
-            </details>
+              {%- endif -%}
+            </div>
+          </details>
+        </div>
+      {%- endif -%}
+      <div class="product__accordion accordion">
+        <details id="Details-care-{{ section.id }}">
+          <summary>
+            <div class="summary__title">
+              <h2 class="h4 accordion__title">CARE</h2>
+            </div>
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </summary>
+          <div class="accordion__content rte" id="ProductAccordion-care-{{ section.id }}">
+            {%- if product.metafields.nbjc.care_note.value != blank -%}
+              {{ product.metafields.nbjc.care_note.value | escape | newline_to_br }}
+            {%- else -%}
+              <p>Apply to a clean, dry surface. Hand wash recommended for items with stickers.</p>
+            {%- endif -%}
           </div>
-        {%- endif -%}
-        {%- if product.metafields.custom.care != blank -%}
-          <div class="product__accordion accordion">
-            <details id="Details-care-{{ section.id }}">
-              <summary>
-                <div class="summary__title">
-                  <h2 class="h4 accordion__title">CARE</h2>
-                </div>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <div class="accordion__content rte" id="ProductAccordion-care-{{ section.id }}">
-                {{ product.metafields.custom.care | metafield_tag }}
-              </div>
-            </details>
-          </div>
-        {%- endif -%}
+        </details>
       </div>
-    {%- endif -%}
+    </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
 
