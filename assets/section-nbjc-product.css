@@ -265,21 +265,21 @@
   overflow-wrap: break-word;
 }
 
-.nbjc-product-accordions__details table,
-.nbjc-product-accordions__details thead,
-.nbjc-product-accordions__details tbody,
-.nbjc-product-accordions__details tr,
-.nbjc-product-accordions__details th,
-.nbjc-product-accordions__details td {
+.nbjc-product-accordions__details blockquote {
+  border-left: 0;
+  color: inherit;
   display: block;
-  max-width: 100%;
-  width: 100%;
+  font-style: normal;
+  margin: 0;
+  padding-left: 0;
 }
 
-.nbjc-product-accordions__details th,
-.nbjc-product-accordions__details td {
-  padding-left: 0;
-  padding-right: 0;
+.nbjc-product-accordions__details blockquote > * {
+  margin: 0 0 1.4rem;
+}
+
+.nbjc-product-accordions__details blockquote > *:last-child {
+  margin-bottom: 0;
 }
 
 .nbjc-main-product-section + .section .related-products {
