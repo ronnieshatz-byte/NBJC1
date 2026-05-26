@@ -171,13 +171,36 @@
 @media screen and (max-width: 749px) {
   .editorial-footer__inner {
     display: block;
-    padding-top: 3.2rem;
-    padding-bottom: 4.8rem;
+    padding-top: 2.8rem;
+    padding-bottom: calc(4.4rem + env(safe-area-inset-bottom, 0rem));
   }
 
   .editorial-footer__brand,
   .editorial-footer__nav {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.7rem;
+  }
+
+  .editorial-footer__mark {
+    margin-bottom: 0.65rem;
+  }
+
+  .editorial-footer__tagline {
+    margin-bottom: 1.8rem;
+  }
+
+  .editorial-footer__tagline,
+  .editorial-footer__copyright,
+  .editorial-footer__copy,
+  .editorial-footer__links a {
+    font-size: 1.18rem;
+  }
+
+  .editorial-footer__title {
+    margin-bottom: 1.15rem;
+  }
+
+  .editorial-footer__links li + li {
+    margin-top: 0.5rem;
   }
 
   .editorial-footer__field {
@@ -186,5 +209,6 @@
 
   .editorial-footer__social {
     justify-content: flex-start;
+    margin-top: 1rem;
   }
 }

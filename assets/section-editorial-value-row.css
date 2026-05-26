@@ -63,7 +63,15 @@
   }
 
   .editorial-value {
-    padding: 2.8rem 1.2rem;
+    padding: 2.45rem 1.2rem 2.55rem;
+  }
+
+  .editorial-value__icon {
+    margin-bottom: 1.25rem;
+  }
+
+  .editorial-value__title {
+    margin-bottom: 0.9rem;
   }
 
   .editorial-value:nth-child(odd) {
