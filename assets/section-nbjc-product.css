@@ -227,8 +227,8 @@
 }
 
 .nbjc-product-accordions {
-  margin-bottom: clamp(0.8rem, 1.6vw, 1.6rem);
-  margin-top: clamp(2.2rem, 3vw, 3.2rem);
+  margin-bottom: clamp(0.4rem, 1vw, 1rem);
+  margin-top: clamp(1.8rem, 2.5vw, 2.7rem);
 }
 
 .nbjc-product-accordions .accordion {
@@ -253,7 +253,7 @@
   height: auto;
   line-height: 1.7;
   max-height: none;
-  max-width: 70rem;
+  max-width: 78rem;
   overflow: visible;
   padding: 0 0 1.8rem;
   width: 100%;
@@ -284,7 +284,7 @@
 
 .nbjc-main-product-section + .section .related-products {
   color: rgb(var(--brand-ink-rgb));
-  padding-top: clamp(1.8rem, 2.5vw, 2.8rem);
+  padding-top: clamp(1.4rem, 2vw, 2.2rem);
 }
 
 .nbjc-main-product-section + .section .related-products__heading {
@@ -387,11 +387,11 @@
   }
 
   .nbjc-product-accordions {
-    margin-bottom: 0.6rem;
-    margin-top: 2.4rem;
+    margin-bottom: 0.3rem;
+    margin-top: 2rem;
   }
 
   .nbjc-main-product-section + .section .related-products {
-    padding-top: 2.2rem;
+    padding-top: 1.8rem;
   }
 }
