@@ -689,8 +689,14 @@
     {%- assign description_blocks = section.blocks | where: 'type', 'description' -%}
     {%- assign description_block = description_blocks | first -%}
     {%- liquid
+      assign product_title_downcase = product.title | downcase
+      assign product_type_downcase = product.type | downcase
+      assign has_sticker_use_fallback = false
+      if product_title_downcase contains 'sticker' or product_type_downcase contains 'sticker'
+        assign has_sticker_use_fallback = true
+      endif
       assign has_product_details = false
-      if product.metafields.custom.material != blank or product.metafields.custom['size'] != blank or product.metafields.custom.placement_use_note != blank
+      if product.metafields.custom.material != blank or product.metafields.custom['size'] != blank or product.metafields.custom.placement_use_note != blank or has_sticker_use_fallback
         assign has_product_details = true
       endif
     -%}
@@ -729,11 +735,18 @@
               </div>
             </div>
           {%- endif -%}
-          {%- if product.metafields.custom.placement_use_note != blank -%}
+          {%- if product.metafields.custom.placement_use_note != blank or has_sticker_use_fallback -%}
             <div class="nbjc-product-details__item">
               <p class="nbjc-product-label">USE</p>
               <div class="nbjc-product-details__text rte">
-                {{ product.metafields.custom.placement_use_note | metafield_tag }}
+                {%- if product.metafields.custom.placement_use_note != blank -%}
+                  {{ product.metafields.custom.placement_use_note | metafield_tag }}
+                {%- else -%}
+                  <p>
+                    Laptop, notebook, water bottle,<br>
+                    or any surface witnessing the situation.
+                  </p>
+                {%- endif -%}
               </div>
             </div>
           {%- endif -%}
