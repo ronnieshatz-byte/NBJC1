@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "editorial_hero": {
+      "type": "editorial-collection-hero",
+      "settings": {
+        "hero_asset": "nbjc-emotional-damage-collection-hero.png",
+        "eyebrow": "EMOTIONAL DAMAGE",
+        "heading_line_1": "Consequences acknowledged.",
+        "heading_line_2": "Recovery non-linear.",
+        "body_line_1": "For days when the quest technically continues,",
+        "body_line_2": "but morale took a hit.",
+        "metadata_label_1": "STATUS",
+        "metadata_value_1": "ONGOING",
+        "metadata_label_2": "CAPACITY",
+        "metadata_value_2": "FRAGILE",
+        "metadata_label_3": "SUPPORT",
+        "metadata_value_3": "SNACKS",
+        "inventory_heading": "AVAILABLE INVENTORY"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "editorial_return": {
+      "type": "editorial-collection-return",
+      "settings": {
+        "label": "RETURN TO OPERATIONAL STATES",
+        "link": "/pages/operational-states"
+      }
+    }
+  },
+  "order": [
+    "editorial_hero",
+    "product-grid",
+    "editorial_return"
+  ]
+}

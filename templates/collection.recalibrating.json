@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "editorial_hero": {
+      "type": "editorial-collection-hero",
+      "settings": {
+        "hero_asset": "nbjc-recalibrating-collection-hero.jpeg",
+        "eyebrow": "RECALIBRATING",
+        "heading_line_1": "Demand levels temporarily lowered.",
+        "heading_line_2": "Systems adjusting.",
+        "body_line_1": "For fewer inputs,",
+        "body_line_2": "lower expectations,",
+        "body_line_3": "and plans adjusted without ceremony.",
+        "metadata_label_1": "STATUS",
+        "metadata_value_1": "TEMPORARY",
+        "metadata_label_2": "ENERGY",
+        "metadata_value_2": "CONSERVING",
+        "metadata_label_3": "OUTLOOK",
+        "metadata_value_3": "TBD",
+        "inventory_heading": "AVAILABLE INVENTORY"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "editorial_return": {
+      "type": "editorial-collection-return",
+      "settings": {
+        "label": "RETURN TO OPERATIONAL STATES",
+        "link": "/pages/operational-states"
+      }
+    }
+  },
+  "order": [
+    "editorial_hero",
+    "product-grid",
+    "editorial_return"
+  ]
+}
