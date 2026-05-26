@@ -245,10 +245,41 @@
 }
 
 .nbjc-product-accordions .accordion__content {
+  box-sizing: border-box;
   color: rgba(var(--brand-ink-rgb), 0.72);
+  display: block;
   font-family: var(--font-body-family);
   font-size: 1.42rem;
+  height: auto;
   line-height: 1.7;
+  max-height: none;
+  max-width: 70rem;
+  overflow: visible;
+  padding: 0 0 1.8rem;
+  width: 100%;
+  word-break: normal;
+}
+
+.nbjc-product-accordions .accordion__content p,
+.nbjc-product-accordions .accordion__content li {
+  overflow-wrap: break-word;
+}
+
+.nbjc-product-accordions__details table,
+.nbjc-product-accordions__details thead,
+.nbjc-product-accordions__details tbody,
+.nbjc-product-accordions__details tr,
+.nbjc-product-accordions__details th,
+.nbjc-product-accordions__details td {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.nbjc-product-accordions__details th,
+.nbjc-product-accordions__details td {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .nbjc-main-product-section + .section .related-products {
