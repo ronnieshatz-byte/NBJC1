@@ -67,10 +67,10 @@
 .nbjc-product-page .product__title h1 {
   color: rgb(var(--brand-ink-rgb));
   font-family: var(--font-heading-family);
-  font-size: clamp(2.8rem, 2.85vw, 3.65rem);
+  font-size: clamp(2.65rem, 2.55vw, 3.35rem);
   font-weight: var(--font-heading-weight);
-  letter-spacing: -0.035em;
-  line-height: 1.18;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
 }
 
 .nbjc-product-page .product__title {
@@ -131,6 +131,7 @@
   font-family: var(--font-body-family);
   font-size: 1.45rem;
   letter-spacing: 0.02em;
+  min-height: 5rem;
 }
 
 .nbjc-product-page .product__info-container .product-form {
@@ -172,8 +173,8 @@
 
 .nbjc-product-field-note {
   border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.19);
-  margin-top: clamp(4.4rem, 6vw, 6.8rem);
-  padding-top: clamp(2.8rem, 4vw, 3.8rem);
+  margin-top: clamp(3.6rem, 4.8vw, 5.4rem);
+  padding-top: clamp(2.5rem, 3.4vw, 3.3rem);
 }
 
 .nbjc-product-field-note__inner {
@@ -305,13 +306,20 @@
   }
 }
 
+@media screen and (min-width: 990px) {
+  .nbjc-product-page .product-media-container.constrain-height {
+    --constrained-min-height: clamp(40rem, 40vw, 50rem);
+    --constrained-height: min(54rem, max(var(--constrained-min-height), calc(100vh - 18rem)));
+  }
+}
+
 @media screen and (max-width: 749px) {
   .nbjc-product-page .product {
     gap: 2.4rem;
   }
 
   .nbjc-product-page .product__title h1 {
-    font-size: clamp(2.7rem, 8vw, 3.25rem);
+    font-size: clamp(2.55rem, 7.5vw, 3.1rem);
   }
 
   .nbjc-product-page .product__info-container > * + * {
@@ -325,8 +333,8 @@
   }
 
   .nbjc-product-field-note {
-    margin-top: 3.4rem;
-    padding-top: 2.6rem;
+    margin-top: 3rem;
+    padding-top: 2.4rem;
   }
 
   .nbjc-product-field-note__inner {
