@@ -3,7 +3,7 @@
     "editorial_hero": {
       "type": "editorial-collection-hero",
       "settings": {
-        "hero_asset": "nbjc-current-objective-collection-hero.jpeg",
+        "hero_asset": "nbjc-current-objective-collection-hero.jpg",
         "eyebrow": "CURRENT OBJECTIVE",
         "heading_line_1": "Reduced-capacity operation.",
         "heading_line_2": "Progress still counts.",
