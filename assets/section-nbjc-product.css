@@ -22,11 +22,11 @@
 }
 
 .nbjc-product-page .thumbnail-slider {
-  margin-top: 1.4rem;
+  margin-top: 1.2rem;
 }
 
 .nbjc-product-page .thumbnail {
-  opacity: 0.86;
+  opacity: 0.82;
 }
 
 .nbjc-product-page .thumbnail:hover {
@@ -34,9 +34,17 @@
 }
 
 .nbjc-product-page .thumbnail[aria-current] {
-  border-color: rgba(var(--brand-accent-rgb), 0.42);
-  box-shadow: 0 0 0 0.1rem rgba(var(--brand-accent-rgb), 0.32);
+  border-color: rgba(var(--brand-accent-rgb), 0.3);
+  box-shadow: 0 0 0 0.1rem rgba(var(--brand-accent-rgb), 0.22);
   opacity: 1;
+}
+
+.nbjc-product-page .thumbnail-slider .slider-button {
+  color: rgba(var(--brand-ink-rgb), 0.52);
+}
+
+.nbjc-product-page .thumbnail-slider .slider-button:hover {
+  color: rgba(var(--brand-ink-rgb), 0.76);
 }
 
 .nbjc-product-page .product__info-container {
@@ -44,7 +52,7 @@
 }
 
 .nbjc-product-page .product__info-container > * + * {
-  margin: 1.55rem 0;
+  margin: 1.25rem 0;
 }
 
 .nbjc-product-page .product__text.caption-with-letter-spacing {
@@ -53,22 +61,26 @@
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.22em;
-  margin-bottom: 2.1rem;
+  margin-bottom: 1.4rem;
 }
 
 .nbjc-product-page .product__title h1 {
   color: rgb(var(--brand-ink-rgb));
   font-family: var(--font-heading-family);
-  font-size: clamp(3.6rem, 4vw, 4.8rem);
+  font-size: clamp(2.8rem, 2.85vw, 3.65rem);
   font-weight: var(--font-heading-weight);
-  letter-spacing: -0.045em;
-  line-height: 1.14;
+  letter-spacing: -0.035em;
+  line-height: 1.18;
+}
+
+.nbjc-product-page .product__title {
+  margin-bottom: 1.1rem;
 }
 
 .nbjc-product-page .price--large {
   color: rgb(var(--brand-ink-rgb));
   font-family: var(--font-body-family);
-  font-size: 2rem;
+  font-size: 1.85rem;
   letter-spacing: 0.01em;
 }
 
@@ -119,6 +131,18 @@
   font-family: var(--font-body-family);
   font-size: 1.45rem;
   letter-spacing: 0.02em;
+}
+
+.nbjc-product-page .product__info-container .product-form {
+  margin: 2rem 0 1.5rem;
+}
+
+.nbjc-product-page .product-form__submit {
+  margin-bottom: 0.8rem;
+}
+
+.nbjc-product-page .shopify-payment-button__more-options {
+  margin: 1rem 0 0.5rem;
 }
 
 .nbjc-product-page .product-form__submit.button::after,
@@ -287,7 +311,7 @@
   }
 
   .nbjc-product-page .product__title h1 {
-    font-size: clamp(3rem, 9vw, 3.7rem);
+    font-size: clamp(2.7rem, 8vw, 3.25rem);
   }
 
   .nbjc-product-page .product__info-container > * + * {
