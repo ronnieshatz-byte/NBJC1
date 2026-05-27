@@ -1,0 +1,126 @@
+{{ 'section-main-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="nbjc-faq color-scheme-1 gradient">
+  <div class="nbjc-faq__inner page-width">
+    <header class="nbjc-faq__header">
+      <h1 class="nbjc-faq__title">FAQ</h1>
+      <span class="nbjc-faq__rule" aria-hidden="true"></span>
+      <p class="nbjc-faq__intro">
+        Useful answers for shipping, sticker care, returns,<br class="nbjc-faq__desktop-break">
+        and the occasional emotional logistics question.
+      </p>
+    </header>
+
+    <div class="nbjc-faq__groups">
+      <section class="nbjc-faq-group" aria-labelledby="FaqStickerCare">
+        <h2 class="nbjc-faq-group__title" id="FaqStickerCare">Sticker Care</h2>
+        <div class="nbjc-faq-group__questions">
+          <article class="nbjc-faq-item">
+            <h3>Are the stickers waterproof?</h3>
+            <p>Product finishes may vary. Check the product details for listed durability and care information. For decorated bottles or other washable items, hand washing is the cautious choice.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>Where can I put the stickers?</h3>
+            <p>Clean, dry, smooth surfaces are best: laptops, notebooks, water bottles, journals, and other objects already witnessing the situation.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>How big are the stickers?</h3>
+            <p>Sizes vary by design. Check the individual product page for dimensions when listed, or contact us before ordering if you need a specific fit.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>How should I apply my sticker?</h3>
+            <p>Wipe the surface clean and dry, position the sticker, then press smoothly from the center outward. A careful first placement saves a small administrative event later.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>Can I remove or reposition a sticker?</h3>
+            <p>Repositioning is easiest before firmly pressing it down. Removal results depend on the sticker, surface, and how long it has been applied.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="nbjc-faq-group" aria-labelledby="FaqShipping">
+        <h2 class="nbjc-faq-group__title" id="FaqShipping">Orders &amp; Shipping</h2>
+        <div class="nbjc-faq-group__questions">
+          <article class="nbjc-faq-item">
+            <h3>How long does shipping take?</h3>
+            <p>Timing depends on destination and carrier service. Any shipping estimates available for your order will appear during checkout or in order updates.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>Will I get tracking?</h3>
+            <p>If tracking is available for your shipment, it will be included in your shipping confirmation email.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>My address is wrong. What should I do?</h3>
+            <p>Contact us as quickly as possible with your order number and corrected address. We will help where we can before the order moves too far along.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="nbjc-faq-group" aria-labelledby="FaqReturns">
+        <h2 class="nbjc-faq-group__title" id="FaqReturns">Returns &amp; Issues</h2>
+        <div class="nbjc-faq-group__questions">
+          <article class="nbjc-faq-item">
+            <h3>Do you accept returns or exchanges?</h3>
+            <p>See our <a href="/pages/shipping-returns">Shipping &amp; Returns</a> page for the current policy and eligibility details.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>What should I do if my order arrives damaged or incorrect?</h3>
+            <p>Send a message with your order number and a photo of what arrived. We will review the situation and help make it right.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>Can I cancel an order?</h3>
+            <p>Contact us as soon as possible. Cancellation depends on whether processing or fulfillment has already begun.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="nbjc-faq-group" aria-labelledby="FaqShop">
+        <h2 class="nbjc-faq-group__title" id="FaqShop">About The Shop</h2>
+        <div class="nbjc-faq-group__questions">
+          <article class="nbjc-faq-item">
+            <h3>What do you sell?</h3>
+            <p>Mostly stickers and small useful objects for open tabs, side quests, half-finished systems, and functioning approximately.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>Are these stickers only for ADHD or neurodivergent people?</h3>
+            <p>No. They are for anyone who recognizes the condition. No diagnosis, explanation, or perfectly organized desk required.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>Do you take custom requests?</h3>
+            <p>Send us a message with what you have in mind. Availability depends on the request and current capacity.</p>
+          </article>
+          <article class="nbjc-faq-item">
+            <h3>What does &ldquo;Not Broken. Just Custom.&rdquo; mean?</h3>
+            <p>It is a quiet acknowledgment that different ways of operating are still valid ways of operating.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <aside class="nbjc-faq__callout" aria-label="Contact us">
+      <div>
+        <h2>Still have a question?</h2>
+        <span class="nbjc-faq__rule" aria-hidden="true"></span>
+        <p>Send a message with your order number if you have one.<br>Small shop. Actual replies.</p>
+      </div>
+      <a class="nbjc-faq__contact" href="/pages/contact">Contact &rarr;</a>
+    </aside>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NBJC FAQ page",
+  "tag": "section",
+  "class": "section nbjc-faq-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "NBJC FAQ page"
+    }
+  ]
+}
+{% endschema %}

@@ -18,7 +18,7 @@
 }
 
 .editorial-value + .editorial-value {
-  border-left: 0.1rem solid rgba(var(--brand-accent-rgb), 0.09);
+  border-left: 0.1rem solid rgba(var(--brand-accent-rgb), 0.12);
 }
 
 .editorial-value__icon {
@@ -40,7 +40,7 @@
   margin: 0 0 1.1rem;
   color: rgba(var(--brand-ink-rgb), 0.82);
   font-family: var(--font-body-family);
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   line-height: 1.35;
@@ -79,7 +79,7 @@
   }
 
   .editorial-value:nth-child(n + 3) {
-    border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.09);
+    border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.12);
   }
 
   .editorial-value__copy {
