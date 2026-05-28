@@ -1,13 +1,13 @@
 {{ 'section-main-faq.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }} .nbjc-policy-callout {
+  #shopify-section-{{ section.id }} .nbjc-policy-callout {
     align-items: center;
     gap: clamp(2.8rem, 3.5vw, 4.2rem);
     justify-content: flex-start;
   }
 
-  .section-{{ section.id }} .nbjc-policy-callout__button {
+  #shopify-section-{{ section.id }} .nbjc-policy-callout__button {
     align-items: center;
     background: rgb(var(--brand-ink-rgb));
     border: 0.1rem solid rgb(var(--brand-ink-rgb));
@@ -29,17 +29,17 @@
     text-transform: uppercase;
   }
 
-  .section-{{ section.id }} .nbjc-policy-callout__button:hover {
+  #shopify-section-{{ section.id }} .nbjc-policy-callout__button:hover {
     background: transparent;
     color: rgb(var(--brand-ink-rgb));
   }
 
   @media screen and (max-width: 749px) {
-    .section-{{ section.id }} .nbjc-policy-callout {
+    #shopify-section-{{ section.id }} .nbjc-policy-callout {
       display: block;
     }
 
-    .section-{{ section.id }} .nbjc-policy-callout__button {
+    #shopify-section-{{ section.id }} .nbjc-policy-callout__button {
       margin-top: 2.1rem;
       min-width: 0;
       width: 100%;
