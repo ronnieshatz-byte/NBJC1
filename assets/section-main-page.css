@@ -21,3 +21,48 @@
   width: 52.5rem;
   height: 52.5rem;
 }
+
+.nbjc-faq-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(3.2rem, 4vw, 4.8rem);
+}
+
+.rte .nbjc-faq-callout__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18rem;
+  min-height: 4.8rem;
+  padding: 1.45rem 2.6rem;
+  border: 0.1rem solid rgb(var(--brand-ink-rgb));
+  border-radius: 0.2rem;
+  background: rgb(var(--brand-ink-rgb));
+  color: var(--brand-parchment);
+  font-family: var(--font-body-family);
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.rte .nbjc-faq-callout__button:hover {
+  background: transparent;
+  color: rgb(var(--brand-ink-rgb));
+}
+
+@media screen and (max-width: 749px) {
+  .nbjc-faq-callout {
+    display: block;
+  }
+
+  .rte .nbjc-faq-callout__button {
+    width: 100%;
+    margin-top: 2rem;
+    min-width: 0;
+  }
+}
