@@ -25,25 +25,25 @@
 .nbjc-faq-callout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(3.2rem, 4vw, 4.8rem);
+  justify-content: flex-start;
+  gap: clamp(2.8rem, 3.5vw, 4.2rem);
 }
 
 .rte .nbjc-faq-callout__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 18rem;
-  min-height: 4.8rem;
-  padding: 1.45rem 2.6rem;
+  min-width: 19rem;
+  min-height: 5.2rem;
+  padding: 1.55rem 3rem;
   border: 0.1rem solid rgb(var(--brand-ink-rgb));
   border-radius: 0.2rem;
   background: rgb(var(--brand-ink-rgb));
   color: var(--brand-parchment);
   font-family: var(--font-body-family);
-  font-size: 1.18rem;
+  font-size: 1.28rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -62,7 +62,7 @@
 
   .rte .nbjc-faq-callout__button {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 2.1rem;
     min-width: 0;
   }
 }
