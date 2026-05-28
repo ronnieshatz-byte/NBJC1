@@ -25,19 +25,20 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
-<cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
+<cart-items class="nbjc-cart-items gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
     <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <h1 class="title title--primary">Current Inventory</h1>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
 
     <div class="cart__warnings">
-      <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
+      <h1 class="cart__empty-text">Nothing packed yet.</h1>
+      <p class="cart__empty-note">Available inventory is still waiting.</p>
       <a href="{{ routes.all_products_collection_url }}" class="button">
-        {{ 'general.continue_shopping' | t }}
+        Return to available inventory
       </a>
 
       {%- if shop.customer_accounts_enabled and customer == null -%}
@@ -54,7 +55,7 @@
           {%- if cart != empty -%}
             <table class="cart-items">
               <caption class="visually-hidden">
-                {{ 'sections.cart.title' | t }}
+                Current Inventory
               </caption>
               <thead>
                 <tr>
