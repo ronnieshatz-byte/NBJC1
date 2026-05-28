@@ -1,4 +1,7 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{%- if page.handle == 'faq' -%}
+  {{ 'section-main-faq.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -14,10 +17,12 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
+<div class="page-width{% unless page.handle == 'faq' %} page-width--narrow{% endunless %} main-page main-page--{{ page.handle }} section-{{ section.id }}-padding">
+  {%- unless page.handle == 'faq' -%}
+    <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ page.title | escape }}
+    </h1>
+  {%- endunless -%}
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {{ page.content }}
   </div>
