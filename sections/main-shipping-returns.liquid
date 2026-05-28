@@ -1,0 +1,185 @@
+{{ 'section-main-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="nbjc-editorial-page nbjc-shipping-page color-scheme-1 gradient">
+  <div class="nbjc-editorial-page__inner page-width">
+    <header class="nbjc-editorial-page__header">
+      <h1>Shipping &amp; Returns</h1>
+      <p>
+        Clear answers for processing times, shipping, returns,<br class="nbjc-editorial-page__desktop-break">
+        and the occasional mail-route side quest.
+      </p>
+    </header>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Processing Time</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          Orders are typically prepared and handed off for shipping within
+          <strong>3&ndash;7 business days</strong>.
+        </p>
+        <p>
+          During busier seasons, processing may take a little longer, but your order
+          will still be handled as quickly and carefully as possible.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Shipping</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          Sticker orders are shipped to the address provided at checkout. Please double-check
+          your shipping address before placing your order, especially apartment numbers,
+          unit numbers, and auto-filled addresses.
+        </p>
+        <p>
+          Once your order has shipped, delivery timing depends on the shipping carrier
+          and destination.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Tracking</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          If tracking is included with your shipping method, you&rsquo;ll receive tracking
+          information once your order is on its way.
+        </p>
+        <p>
+          Please allow a little time for tracking updates to appear after the label is created.
+          Sometimes the system needs a moment to catch up, which feels emotionally familiar.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Lost or Delayed Mail</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          If your order seems delayed, please allow a few extra business days for the carrier
+          to update or deliver it. Mail can occasionally take scenic routes.
+        </p>
+        <p>
+          If your order appears lost or hasn&rsquo;t arrived after a reasonable amount of time,
+          reach out through the contact form with your order number, and I&rsquo;ll help look into it.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Returns &amp; Exchanges</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          Because stickers are small printed goods, returns and exchanges are generally
+          not accepted unless there is an issue with the order.
+        </p>
+        <p>
+          Please contact me if your order arrives damaged, incorrect, or missing an item.
+          I&rsquo;ll do my best to make it right.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Damaged or Incorrect Orders</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          If something arrives damaged or incorrect, please reach out within
+          <strong>7 days of delivery</strong> with:
+        </p>
+        <ul>
+          <li>Your order number</li>
+          <li>A brief description of the issue</li>
+          <li>A clear photo of the damaged or incorrect item</li>
+        </ul>
+        <p>
+          This helps me review the situation quickly and find the best next step.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Cancellations</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          If you need to cancel an order, please reach out as soon as possible.
+        </p>
+        <p>
+          If the order has not entered processing or shipped yet, I&rsquo;ll do my best to help.
+          Once an order has shipped, it can&rsquo;t be canceled.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Address Issues</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          Orders sent to an incorrect address provided at checkout may not be eligible
+          for replacement or refund.
+        </p>
+        <p>
+          If you notice an address mistake after ordering, contact me right away.
+          If the order has not shipped yet, I may be able to update it.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-section">
+      <div class="nbjc-policy-section__label">
+        <span>Questions</span>
+      </div>
+      <div class="nbjc-policy-section__content">
+        <p>
+          If something looks off, confusing, delayed, or mildly cursed, send a message
+          with your order number and I&rsquo;ll help from there.
+        </p>
+      </div>
+    </section>
+
+    <section class="nbjc-policy-callout">
+      <div>
+        <h2>Still need help?</h2>
+        <p>
+          Send a message with your order number if you have one.<br>
+          Small shop. Actual replies.
+        </p>
+      </div>
+      <a href="/pages/contact" class="nbjc-policy-callout__button">Contact</a>
+    </section>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shipping returns page",
+  "tag": "section",
+  "class": "section nbjc-shipping-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Shipping returns page"
+    }
+  ]
+}
+{% endschema %}
