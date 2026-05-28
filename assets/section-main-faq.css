@@ -45,12 +45,13 @@
 }
 
 .nbjc-faq__groups {
-  max-width: 112rem;
+  max-width: 104rem;
+  margin-inline: auto;
 }
 
 .nbjc-faq-group {
   display: grid;
-  grid-template-columns: minmax(16rem, 21rem) minmax(0, 78rem);
+  grid-template-columns: minmax(15rem, 19rem) minmax(0, 76rem);
   gap: clamp(3rem, 5vw, 6.2rem);
   padding: 0 0 clamp(3.8rem, 5vw, 5.4rem);
 }
@@ -113,7 +114,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
-  max-width: 112rem;
+  max-width: 104rem;
+  margin-inline: auto;
   margin-top: clamp(0.5rem, 2vw, 2rem);
   padding: clamp(2.6rem, 4vw, 3.7rem) clamp(2.5rem, 5vw, 4.6rem);
   border: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
