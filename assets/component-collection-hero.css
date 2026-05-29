@@ -105,13 +105,13 @@
 
 .nbjc-shop-all-hero .collection-hero__inner {
   max-width: 120rem;
-  padding-bottom: 3.2rem;
+  padding-bottom: 0;
   padding-top: 5.6rem;
 }
 
 .nbjc-shop-all-hero .collection-hero__text-wrapper {
   border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.12);
-  padding-bottom: 3.2rem;
+  padding-bottom: 2.2rem;
 }
 
 .nbjc-shop-all-hero .collection-hero__title {
@@ -141,7 +141,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 2.6rem;
+  margin-top: 2.2rem;
 }
 
 .nbjc-shop-all-shortcuts a {
@@ -175,11 +175,11 @@
 
 @media screen and (max-width: 749px) {
   .nbjc-shop-all-hero .collection-hero__inner {
-    padding: 4.2rem 2.4rem 2.8rem;
+    padding: 4rem 2.4rem 0;
   }
 
   .nbjc-shop-all-hero .collection-hero__text-wrapper {
-    padding-bottom: 2.6rem;
+    padding-bottom: 2rem;
   }
 
   .nbjc-shop-all-hero .collection-hero__title {
@@ -193,7 +193,7 @@
 
   .nbjc-shop-all-shortcuts {
     gap: 0.7rem;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
   }
 
   .nbjc-shop-all-shortcuts a {

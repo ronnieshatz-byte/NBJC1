@@ -102,6 +102,7 @@
 .nbjc-shop-all-grid {
   background: var(--brand-parchment);
   color: rgb(var(--brand-ink-rgb));
+  padding-top: 2.4rem !important;
 }
 
 .nbjc-shop-all-grid .facets-wrapper,
@@ -112,7 +113,7 @@
 .nbjc-shop-all-grid .facets-wrapper {
   border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
   margin-bottom: 3.2rem;
-  padding-bottom: 1.8rem;
+  padding-bottom: 1.4rem;
 }
 
 .nbjc-shop-all-grid .facets__form {
@@ -237,7 +238,7 @@
 
 @media screen and (max-width: 749px) {
   .nbjc-shop-all-grid {
-    padding-top: 1.6rem;
+    padding-top: 2rem !important;
   }
 
   .nbjc-shop-all-grid .facets-wrapper,
@@ -247,8 +248,8 @@
   }
 
   .nbjc-shop-all-grid .facets-wrapper {
-    margin-bottom: 2.4rem;
-    padding-bottom: 1.4rem;
+    margin-bottom: 2.2rem;
+    padding-bottom: 1.2rem;
   }
 
   .nbjc-shop-all-grid .product-grid {
