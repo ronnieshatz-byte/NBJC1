@@ -9,15 +9,34 @@
   }
 {%- endstyle -%}
 
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+{%- assign is_shop_all = false -%}
+{%- if collection.handle == 'all' -%}
+  {%- assign is_shop_all = true -%}
+{%- endif -%}
+
+<div class="collection-hero{% if is_shop_all %} nbjc-shop-all-hero{% endif %}{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
+        {%- if is_shop_all -%}
+          Available Inventory
+        {%- else -%}
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        {%- endif -%}
       </h1>
 
-      {%- if section.settings.show_collection_description -%}
+      {%- if is_shop_all -%}
+        <div class="collection-hero__description rte">
+          <p>Stickers for current objectives, side quests, recalibrating, emotional damage, and the small systems keeping things moving.</p>
+        </div>
+        <nav class="nbjc-shop-all-shortcuts" aria-label="Operational state shortcuts">
+          <a href="/collections/current-objectives">Current Objectives</a>
+          <a href="/collections/side-quests">Side Quests</a>
+          <a href="/collections/recalibrating">Recalibrating</a>
+          <a href="/collections/emotional-damage">Emotional Damage</a>
+        </nav>
+      {%- elsif section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
     </div>

@@ -97,3 +97,175 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+/* NBJC Shop All / Available Inventory grid */
+.nbjc-shop-all-grid {
+  background: var(--brand-parchment);
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-shop-all-grid .facets-wrapper,
+.nbjc-shop-all-grid .collection {
+  max-width: 120rem;
+}
+
+.nbjc-shop-all-grid .facets-wrapper {
+  border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
+  margin-bottom: 3.2rem;
+  padding-bottom: 1.8rem;
+}
+
+.nbjc-shop-all-grid .facets__form {
+  gap: 2rem;
+}
+
+.nbjc-shop-all-grid .facets__heading,
+.nbjc-shop-all-grid .facet-filters__label,
+.nbjc-shop-all-grid .product-count__text,
+.nbjc-shop-all-grid .mobile-facets__open,
+.nbjc-shop-all-grid .facets__summary {
+  color: rgba(var(--brand-ink-rgb), 0.64);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.nbjc-shop-all-grid .facet-filters__sort,
+.nbjc-shop-all-grid .select__select {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-shop-all-grid .product-grid {
+  column-gap: 2.4rem;
+  row-gap: 4.8rem;
+}
+
+.nbjc-shop-all-grid .grid__item {
+  min-width: 0;
+}
+
+.nbjc-shop-all-grid .card-wrapper {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-shop-all-grid .card--standard .card__inner {
+  background: rgba(var(--brand-parchment-soft-rgb), 0.7);
+  border: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.nbjc-shop-all-grid .card--standard .card__inner:after {
+  box-shadow: none;
+}
+
+.nbjc-shop-all-grid .card__media .media img {
+  transition: transform var(--duration-long) ease, opacity var(--duration-default) ease;
+}
+
+.nbjc-shop-all-grid .card-wrapper:hover .card__media .media img {
+  transform: scale(1.015);
+}
+
+.nbjc-shop-all-grid .card--standard > .card__content .card__information {
+  padding-top: 1.3rem;
+}
+
+.nbjc-shop-all-grid .card__heading {
+  color: rgb(var(--brand-ink-rgb));
+  font-family: var(--font-heading-family);
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.22;
+}
+
+.nbjc-shop-all-grid .card__heading a {
+  color: inherit;
+  text-decoration-color: rgba(var(--brand-ink-rgb), 0.24);
+}
+
+.nbjc-shop-all-grid .card__heading a:hover {
+  text-decoration-thickness: 0.1rem;
+}
+
+.nbjc-shop-all-grid .card-information > .price {
+  color: rgba(var(--brand-ink-rgb), 0.82);
+  font-size: 1.35rem;
+  margin-top: 0.8rem;
+}
+
+.nbjc-shop-all-grid .price__sale,
+.nbjc-shop-all-grid .price-item--sale {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-shop-all-grid .badge {
+  background: rgba(var(--brand-parchment-rgb), 0.9);
+  border-color: rgba(var(--brand-ink-rgb), 0.16);
+  color: rgba(var(--brand-ink-rgb), 0.74);
+  font-size: 1rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.nbjc-shop-all-grid .pagination-wrapper {
+  border-top: 0.1rem solid rgba(var(--brand-ink-rgb), 0.1);
+  margin-top: 5.6rem;
+  padding-top: 2.4rem;
+}
+
+.nbjc-shop-all-grid .pagination__item {
+  color: rgba(var(--brand-ink-rgb), 0.74);
+}
+
+.nbjc-shop-all-grid .pagination__item--current {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-shop-all-grid .collection--empty {
+  color: rgb(var(--brand-ink-rgb));
+}
+
+@media screen and (min-width: 990px) {
+  .nbjc-shop-all-grid .grid--4-col-desktop .grid__item {
+    max-width: calc(25% - 1.8rem);
+    width: calc(25% - 1.8rem);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .nbjc-shop-all-grid {
+    padding-top: 1.6rem;
+  }
+
+  .nbjc-shop-all-grid .facets-wrapper,
+  .nbjc-shop-all-grid .collection {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .nbjc-shop-all-grid .facets-wrapper {
+    margin-bottom: 2.4rem;
+    padding-bottom: 1.4rem;
+  }
+
+  .nbjc-shop-all-grid .product-grid {
+    column-gap: 1.4rem;
+    row-gap: 3.2rem;
+  }
+
+  .nbjc-shop-all-grid .card--standard .card__inner {
+    border-radius: 0.7rem;
+  }
+
+  .nbjc-shop-all-grid .card__heading {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .nbjc-shop-all-grid .card-information > .price {
+    font-size: 1.25rem;
+  }
+}

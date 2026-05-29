@@ -96,3 +96,112 @@
     min-height: 20rem;
   }
 }
+
+/* NBJC Shop All / Available Inventory */
+.nbjc-shop-all-hero {
+  background: var(--brand-parchment);
+  color: rgb(var(--brand-ink-rgb));
+}
+
+.nbjc-shop-all-hero .collection-hero__inner {
+  max-width: 120rem;
+  padding-bottom: 3.2rem;
+  padding-top: 5.6rem;
+}
+
+.nbjc-shop-all-hero .collection-hero__text-wrapper {
+  border-bottom: 0.1rem solid rgba(var(--brand-ink-rgb), 0.12);
+  padding-bottom: 3.2rem;
+}
+
+.nbjc-shop-all-hero .collection-hero__title {
+  color: rgb(var(--brand-ink-rgb));
+  font-family: var(--font-heading-family);
+  font-size: clamp(4.2rem, 7vw, 7.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+  margin: 0;
+  max-width: 72rem;
+}
+
+.nbjc-shop-all-hero .collection-hero__description {
+  color: rgba(var(--brand-ink-rgb), 0.74);
+  font-size: clamp(1.55rem, 1.7vw, 1.9rem);
+  line-height: 1.55;
+  margin: 2rem 0 0;
+  max-width: 68rem;
+}
+
+.nbjc-shop-all-hero .collection-hero__description p {
+  margin: 0;
+}
+
+.nbjc-shop-all-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2.6rem;
+}
+
+.nbjc-shop-all-shortcuts a {
+  align-items: center;
+  background: rgba(var(--brand-parchment-soft-rgb), 0.78);
+  border: 0.1rem solid rgba(var(--brand-ink-rgb), 0.14);
+  border-radius: 999px;
+  color: rgba(var(--brand-ink-rgb), 0.78);
+  display: inline-flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  min-height: 3.8rem;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color var(--duration-short) ease, color var(--duration-short) ease;
+}
+
+.nbjc-shop-all-shortcuts a::after {
+  content: "\2192";
+  font-size: 1.2rem;
+  margin-left: 0.8rem;
+}
+
+.nbjc-shop-all-shortcuts a:hover {
+  border-color: rgba(var(--brand-ink-rgb), 0.32);
+  color: rgb(var(--brand-ink-rgb));
+}
+
+@media screen and (max-width: 749px) {
+  .nbjc-shop-all-hero .collection-hero__inner {
+    padding: 4.2rem 2.4rem 2.8rem;
+  }
+
+  .nbjc-shop-all-hero .collection-hero__text-wrapper {
+    padding-bottom: 2.6rem;
+  }
+
+  .nbjc-shop-all-hero .collection-hero__title {
+    font-size: 4.2rem;
+  }
+
+  .nbjc-shop-all-hero .collection-hero__description {
+    font-size: 1.55rem;
+    margin-top: 1.6rem;
+  }
+
+  .nbjc-shop-all-shortcuts {
+    gap: 0.7rem;
+    margin-top: 2rem;
+  }
+
+  .nbjc-shop-all-shortcuts a {
+    flex: 1 1 calc(50% - 0.7rem);
+    font-size: 0.95rem;
+    justify-content: center;
+    min-height: 3.9rem;
+    padding: 1rem 1.1rem;
+    text-align: center;
+  }
+}
