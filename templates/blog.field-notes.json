@@ -9,6 +9,15 @@
  */
 {
   "sections": {
+    "field_note": {
+      "type": "nbjc-field-note",
+      "settings": {
+        "label": "FIELD NOTE",
+        "heading": "Notes from the current operating state.",
+        "body": "<p>Small observations, shop notes, and useful little records from behind the counter.</p>",
+        "color_scheme": "scheme-1"
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
@@ -23,6 +32,7 @@
     }
   },
   "order": [
+    "field_note",
     "main"
   ]
 }

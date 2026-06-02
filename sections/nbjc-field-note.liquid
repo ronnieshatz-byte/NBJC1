@@ -1,0 +1,78 @@
+{{ 'section-nbjc-field-note.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign heading_id = 'NBJCFieldNoteHeading-' | append: section.id
+  assign has_heading = false
+  if section.settings.heading != blank
+    assign has_heading = true
+  endif
+-%}
+
+<div class="nbjc-field-note color-{{ section.settings.color_scheme }} gradient">
+  <div class="nbjc-field-note__inner page-width">
+    <div
+      class="nbjc-field-note__content"
+      {% if has_heading %}
+        aria-labelledby="{{ heading_id }}"
+      {% endif %}
+    >
+      {%- if section.settings.label != blank -%}
+        <p class="nbjc-field-note__label">{{ section.settings.label | escape }}</p>
+      {%- endif -%}
+
+      {%- if has_heading -%}
+        <h2 class="nbjc-field-note__heading" id="{{ heading_id }}">
+          {{ section.settings.heading | escape }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="nbjc-field-note__body rte">
+          {{ section.settings.body }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NBJC field note",
+  "tag": "section",
+  "class": "section nbjc-field-note-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "FIELD NOTE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A small note for the current situation."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>For open tabs, small systems, and whatever still counts as functioning today.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "NBJC field note"
+    }
+  ]
+}
+{% endschema %}
