@@ -8,7 +8,7 @@
   endif
 -%}
 
-<div class="nbjc-field-note color-{{ section.settings.color_scheme }} gradient">
+<div class="nbjc-field-note{% if template.name == 'blog' %} nbjc-field-note--blog{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="nbjc-field-note__inner page-width">
     <div
       class="nbjc-field-note__content"
