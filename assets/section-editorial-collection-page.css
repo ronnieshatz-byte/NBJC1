@@ -180,6 +180,37 @@
   padding-top: clamp(4.4rem, 5.8vw, 7.4rem);
 }
 
+.editorial-collection-hero--field-issue-archive.editorial-collection-hero--image-led {
+  padding-top: clamp(2.4rem, 3.6vw, 4.2rem);
+}
+
+.editorial-collection-hero__wide-media {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.editorial-collection-hero__wide-media img {
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.editorial-collection-hero__intro {
+  padding-top: clamp(1.8rem, 2.6vw, 2.8rem);
+}
+
+.editorial-collection-hero__intro p {
+  color: rgba(var(--brand-ink-rgb), 0.68);
+  font-family: var(--font-body-family);
+  font-size: clamp(1.35rem, 1.25vw, 1.55rem);
+  line-height: 1.72;
+  margin: 0 auto;
+  max-width: 56rem;
+  text-align: center;
+}
+
 .editorial-collection-hero--field-issue-archive .editorial-collection-hero__inner {
   gap: clamp(2rem, 3.6vw, 5rem);
 }
@@ -270,6 +301,10 @@
 
 .editorial-collection-hero--field-issue-archive .editorial-collection-inventory {
   padding-top: clamp(3.4rem, 4.8vw, 5.4rem);
+}
+
+.editorial-collection-hero--image-led .editorial-collection-inventory {
+  padding-top: clamp(2.8rem, 4vw, 4.6rem);
 }
 
 .editorial-collection-hero--field-issue-archive .editorial-collection-inventory__title {
@@ -446,6 +481,30 @@
 
   .editorial-collection-hero--field-issue-archive {
     padding-top: 3.2rem;
+  }
+
+  .editorial-collection-hero--field-issue-archive.editorial-collection-hero--image-led {
+    padding-top: 1.8rem;
+  }
+
+  .editorial-collection-hero__wide-media {
+    margin: 0 -1.5rem;
+  }
+
+  .editorial-collection-hero__wide-media img {
+    height: auto;
+    max-width: none;
+    transform: translateX(-23%);
+    width: 145%;
+  }
+
+  .editorial-collection-hero__intro {
+    padding-top: 1.8rem;
+  }
+
+  .editorial-collection-hero__intro p {
+    font-size: 1.28rem;
+    text-align: left;
   }
 
   .editorial-collection-hero--field-issue-archive .editorial-collection-hero__copy {

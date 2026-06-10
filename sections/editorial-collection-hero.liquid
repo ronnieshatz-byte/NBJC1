@@ -1,79 +1,111 @@
 {% comment %}Shared hero for NBJC operational-state collection templates.{% endcomment %}
 {{ 'section-editorial-collection-page.css' | asset_url | stylesheet_tag }}
 
-<div class="editorial-collection-hero{% if section.settings.layout_variant == 'field_issue_archive' %} editorial-collection-hero--field-issue-archive{% endif %}">
-  <div class="editorial-collection-hero__inner{% if section.settings.hero_asset == blank %} editorial-collection-hero__inner--no-media{% endif %} page-width">
-    <div class="editorial-collection-hero__copy">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="editorial-collection-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-      {%- endif -%}
-      <h1 class="editorial-collection-hero__heading">
-        {{ section.settings.heading_line_1 | escape -}}
-        {%- if section.settings.heading_line_2 != blank -%}
-          <br>{{ section.settings.heading_line_2 | escape }}
-        {%- endif -%}
-      </h1>
-      <p class="editorial-collection-hero__body">
-        {{ section.settings.body_line_1 | escape -}}
-        {%- if section.settings.body_line_2 != blank -%}
-          <br>{{ section.settings.body_line_2 | escape -}}
-        {%- endif -%}
-        {%- if section.settings.body_line_3 != blank -%}
-          <br>{{ section.settings.body_line_3 | escape }}
-        {%- endif -%}
-      </p>
-      {%- if section.settings.collection_note != blank -%}
-        <p class="editorial-collection-hero__note">{{ section.settings.collection_note | escape }}</p>
-      {%- endif -%}
-      <dl class="editorial-collection-hero__metadata">
-        <div>
-          <dt>{{ section.settings.metadata_label_1 | escape }}:</dt>
-          <dd>{{ section.settings.metadata_value_1 | escape }}</dd>
-        </div>
-        <div>
-          <dt>{{ section.settings.metadata_label_2 | escape }}:</dt>
-          <dd>{{ section.settings.metadata_value_2 | escape }}</dd>
-        </div>
-        <div>
-          <dt>{{ section.settings.metadata_label_3 | escape }}:</dt>
-          <dd>{{ section.settings.metadata_value_3 | escape }}</dd>
-        </div>
-      </dl>
+{% liquid
+  assign is_field_issue_archive = false
+  assign use_image_led_hero = false
+
+  if section.settings.layout_variant == 'field_issue_archive'
+    assign is_field_issue_archive = true
+  endif
+
+  if is_field_issue_archive and section.settings.hero_asset != blank
+    assign use_image_led_hero = true
+  endif
+%}
+
+<div class="editorial-collection-hero{% if is_field_issue_archive %} editorial-collection-hero--field-issue-archive{% endif %}{% if use_image_led_hero %} editorial-collection-hero--image-led{% endif %}">
+  {%- if use_image_led_hero -%}
+    <div class="editorial-collection-hero__wide-media page-width">
+      <img
+        src="{{ section.settings.hero_asset | asset_url }}"
+        alt="{{ section.settings.heading_line_1 | escape }}"
+        width="1920"
+        height="840"
+        loading="eager"
+        fetchpriority="high"
+      >
     </div>
 
-    {%- if section.settings.hero_asset != blank -%}
-      <div class="editorial-collection-hero__media">
-        {%- if section.settings.layout_variant == 'field_issue_archive' and section.settings.media_label != blank -%}
-          <div class="editorial-collection-hero__media-label">{{ section.settings.media_label | escape }}</div>
-        {%- endif -%}
-        <img
-          src="{{ section.settings.hero_asset | asset_url }}"
-          alt=""
-          width="1536"
-          height="1024"
-          loading="eager"
-          fetchpriority="high"
-        >
+    {%- if section.settings.intro_text != blank -%}
+      <div class="editorial-collection-hero__intro page-width">
+        <p>{{ section.settings.intro_text | escape }}</p>
       </div>
     {%- endif -%}
-  </div>
-
-  {%- if section.settings.feature_asset != blank -%}
-    <div class="editorial-collection-feature page-width">
-      <figure class="editorial-collection-feature__figure">
-        {%- if section.settings.feature_label != blank -%}
-          <figcaption class="editorial-collection-feature__label">{{ section.settings.feature_label | escape }}</figcaption>
+  {%- else -%}
+    <div class="editorial-collection-hero__inner{% if section.settings.hero_asset == blank %} editorial-collection-hero__inner--no-media{% endif %} page-width">
+      <div class="editorial-collection-hero__copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="editorial-collection-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
         {%- endif -%}
-        <img
-          src="{{ section.settings.feature_asset | asset_url }}"
-          alt=""
-          width="1536"
-          height="1024"
-          loading="eager"
-          fetchpriority="high"
-        >
-      </figure>
+        <h1 class="editorial-collection-hero__heading">
+          {{ section.settings.heading_line_1 | escape -}}
+          {%- if section.settings.heading_line_2 != blank -%}
+            <br>{{ section.settings.heading_line_2 | escape }}
+          {%- endif -%}
+        </h1>
+        <p class="editorial-collection-hero__body">
+          {{ section.settings.body_line_1 | escape -}}
+          {%- if section.settings.body_line_2 != blank -%}
+            <br>{{ section.settings.body_line_2 | escape -}}
+          {%- endif -%}
+          {%- if section.settings.body_line_3 != blank -%}
+            <br>{{ section.settings.body_line_3 | escape }}
+          {%- endif -%}
+        </p>
+        {%- if section.settings.collection_note != blank -%}
+          <p class="editorial-collection-hero__note">{{ section.settings.collection_note | escape }}</p>
+        {%- endif -%}
+        <dl class="editorial-collection-hero__metadata">
+          <div>
+            <dt>{{ section.settings.metadata_label_1 | escape }}:</dt>
+            <dd>{{ section.settings.metadata_value_1 | escape }}</dd>
+          </div>
+          <div>
+            <dt>{{ section.settings.metadata_label_2 | escape }}:</dt>
+            <dd>{{ section.settings.metadata_value_2 | escape }}</dd>
+          </div>
+          <div>
+            <dt>{{ section.settings.metadata_label_3 | escape }}:</dt>
+            <dd>{{ section.settings.metadata_value_3 | escape }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      {%- if section.settings.hero_asset != blank -%}
+        <div class="editorial-collection-hero__media">
+          {%- if is_field_issue_archive and section.settings.media_label != blank -%}
+            <div class="editorial-collection-hero__media-label">{{ section.settings.media_label | escape }}</div>
+          {%- endif -%}
+          <img
+            src="{{ section.settings.hero_asset | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </div>
+      {%- endif -%}
     </div>
+
+    {%- if section.settings.feature_asset != blank -%}
+      <div class="editorial-collection-feature page-width">
+        <figure class="editorial-collection-feature__figure">
+          {%- if section.settings.feature_label != blank -%}
+            <figcaption class="editorial-collection-feature__label">{{ section.settings.feature_label | escape }}</figcaption>
+          {%- endif -%}
+          <img
+            src="{{ section.settings.feature_asset | asset_url }}"
+            alt=""
+            width="1536"
+            height="1024"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </figure>
+      </div>
+    {%- endif -%}
   {%- endif -%}
 
   <div class="editorial-collection-inventory page-width">
@@ -106,6 +138,11 @@
       "id": "feature_label",
       "label": "Feature label",
       "default": "COLLECTION PLATE"
+    },
+    {
+      "type": "text",
+      "id": "intro_text",
+      "label": "Intro text"
     },
     {
       "type": "select",
