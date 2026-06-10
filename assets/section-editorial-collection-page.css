@@ -17,6 +17,10 @@
   gap: clamp(0.8rem, 1.8vw, 2.2rem);
 }
 
+.editorial-collection-hero__inner--no-media {
+  display: block;
+}
+
 .editorial-collection-hero__copy {
   max-width: 46rem;
   padding: clamp(1.4rem, 3vw, 3rem) 0;
@@ -47,6 +51,17 @@
   letter-spacing: 0.01em;
   line-height: 1.7;
   margin: clamp(2.4rem, 3vw, 3.1rem) 0;
+}
+
+.editorial-collection-hero__note {
+  border-left: 0.1rem solid rgba(var(--brand-accent-rgb), 0.26);
+  color: rgba(var(--brand-ink-rgb), 0.62);
+  font-family: var(--font-body-family);
+  font-size: 1.28rem;
+  line-height: 1.68;
+  margin: -1rem 0 clamp(2.4rem, 3vw, 3rem);
+  max-width: 39rem;
+  padding-left: 1.5rem;
 }
 
 .editorial-collection-hero__metadata {
@@ -82,6 +97,7 @@
   margin-right: calc((100vw - min(var(--page-width), 100vw)) / -2 - 5rem);
   margin-left: clamp(-7rem, -5vw, -3rem);
   overflow: hidden;
+  position: relative;
 }
 
 .editorial-collection-hero__media img {
@@ -92,6 +108,173 @@
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 18%, rgba(0, 0, 0, 0.7) 38%, #000 58%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 18%, rgba(0, 0, 0, 0.7) 38%, #000 58%);
+}
+
+.editorial-collection-feature {
+  padding-top: clamp(1.6rem, 2.4vw, 2.8rem);
+}
+
+.editorial-collection-feature__figure {
+  background: rgba(var(--brand-parchment-soft-rgb), 0.72);
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  margin: 0;
+  padding: clamp(2.2rem, 4vw, 4.4rem) clamp(1.6rem, 3.2vw, 3.8rem);
+  position: relative;
+}
+
+.editorial-collection-feature__figure::before {
+  background: rgba(var(--brand-accent-rgb), 0.14);
+  content: "";
+  height: 0.1rem;
+  left: clamp(1.6rem, 3.2vw, 3.8rem);
+  position: absolute;
+  right: clamp(1.6rem, 3.2vw, 3.8rem);
+  top: 50%;
+}
+
+.editorial-collection-feature__label {
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.22);
+  color: rgba(var(--brand-ink-rgb), 0.56);
+  display: inline-block;
+  font-family: var(--font-body-family);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.45;
+  margin-bottom: clamp(1.8rem, 2.8vw, 2.8rem);
+  padding-bottom: 0.65rem;
+  position: relative;
+  z-index: 1;
+}
+
+.editorial-collection-feature img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: min(72rem, 100%);
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.editorial-collection-hero__media-label {
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.22);
+  color: rgba(var(--brand-ink-rgb), 0.56);
+  font-family: var(--font-body-family);
+  font-size: 0.98rem;
+  font-weight: 500;
+  left: clamp(2.4rem, 4vw, 4.8rem);
+  letter-spacing: 0.18em;
+  line-height: 1.45;
+  padding-bottom: 0.65rem;
+  position: absolute;
+  top: clamp(1.6rem, 2.5vw, 2.6rem);
+  z-index: 1;
+}
+
+.editorial-collection-hero--field-issue-archive {
+  background:
+    linear-gradient(180deg, rgba(var(--brand-parchment-soft-rgb), 0.92), rgba(var(--brand-parchment-rgb), 1) 72%),
+    var(--brand-parchment);
+  padding-top: clamp(4.4rem, 5.8vw, 7.4rem);
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__inner {
+  gap: clamp(2rem, 3.6vw, 5rem);
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__copy {
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: clamp(1.6rem, 2.8vw, 2.6rem) 0 clamp(1.2rem, 2vw, 2rem);
+  text-align: center;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__eyebrow,
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__metadata div {
+  letter-spacing: 0.2em;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__heading {
+  font-size: clamp(4.2rem, 5.4vw, 7rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__body {
+  color: rgba(var(--brand-ink-rgb), 0.72);
+  font-size: clamp(1.55rem, 1.45vw, 1.85rem);
+  line-height: 1.72;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 58rem;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__metadata {
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  justify-content: center;
+  padding-bottom: 1.8rem;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__note {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+  text-align: left;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__media {
+  background: rgba(var(--brand-parchment-soft-rgb), 0.72);
+  border-bottom: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  border-top: 0.1rem solid rgba(var(--brand-accent-rgb), 0.16);
+  height: clamp(30rem, 34vw, 44rem);
+  margin-left: 0;
+  padding: clamp(4.2rem, 5vw, 6rem) clamp(2rem, 4vw, 4.8rem) clamp(2.2rem, 3vw, 3.6rem);
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__media::before,
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__media::after {
+  background: rgba(var(--brand-accent-rgb), 0.18);
+  content: "";
+  left: clamp(2rem, 4vw, 4.8rem);
+  position: absolute;
+  right: clamp(2rem, 4vw, 4.8rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__media::before {
+  height: 0.1rem;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__media::after {
+  height: 52%;
+  left: 50%;
+  opacity: 0.45;
+  right: auto;
+  width: 0.1rem;
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-hero__media img {
+  height: 100%;
+  margin: 0 auto;
+  max-width: min(48rem, 100%);
+  object-fit: contain;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), #000 18%, #000 82%, rgba(0, 0, 0, 0.92));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), #000 18%, #000 82%, rgba(0, 0, 0, 0.92));
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-inventory {
+  padding-top: clamp(3.4rem, 4.8vw, 5.4rem);
+}
+
+.editorial-collection-hero--field-issue-archive .editorial-collection-inventory__title {
+  font-size: clamp(2.1rem, 2vw, 2.45rem);
+  letter-spacing: 0.08em;
 }
 
 .editorial-collection-inventory {
@@ -208,6 +391,11 @@
     margin: 2.2rem 0;
   }
 
+  .editorial-collection-hero__note {
+    font-size: 1.22rem;
+    margin: -0.6rem 0 2.2rem;
+  }
+
   .editorial-collection-hero__metadata {
     display: grid;
     gap: 1rem;
@@ -230,6 +418,66 @@
   .editorial-collection-hero__media img {
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.72) 13%, #000 27%);
     mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.72) 13%, #000 27%);
+  }
+
+  .editorial-collection-feature {
+    padding-top: 1.6rem;
+  }
+
+  .editorial-collection-feature__figure {
+    margin: 0 -1.5rem;
+    padding: 2rem 1.5rem 2.4rem;
+  }
+
+  .editorial-collection-feature__label {
+    font-size: 0.88rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .editorial-collection-feature img {
+    max-width: 38rem;
+  }
+
+  .editorial-collection-hero__media-label {
+    font-size: 0.88rem;
+    left: 1.5rem;
+    top: 1.4rem;
+  }
+
+  .editorial-collection-hero--field-issue-archive {
+    padding-top: 3.2rem;
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__copy {
+    text-align: left;
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__inner {
+    gap: 2.6rem;
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__heading {
+    font-size: clamp(3.3rem, 11vw, 4.6rem);
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__body {
+    font-size: 1.42rem;
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__metadata {
+    justify-content: initial;
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__media {
+    height: min(78vw, 32rem);
+    margin: 0 -1.5rem;
+    padding: 4.8rem 1.5rem 2.4rem;
+  }
+
+  .editorial-collection-hero--field-issue-archive .editorial-collection-hero__media img {
+    max-width: 34rem;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .editorial-collection-inventory {

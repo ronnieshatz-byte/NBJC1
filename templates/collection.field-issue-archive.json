@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "editorial_hero": {
+      "type": "editorial-collection-hero",
+      "settings": {
+        "hero_asset": "",
+        "feature_asset": "field-issue-archive_collection-plate_final.png",
+        "feature_label": "FIELD ISSUE ARCHIVE / COLLECTION PLATE",
+        "layout_variant": "field_issue_archive",
+        "eyebrow": "",
+        "heading_line_1": "FIELD ISSUE ARCHIVE",
+        "heading_line_2": "",
+        "body_line_1": "Wearable field instruments for work shifts,",
+        "body_line_2": "capacity limits, and operational states",
+        "body_line_3": "observed in real time.",
+        "collection_note": "Designed for IDs, keys, access cards, and other small objects repeatedly required during the situation.",
+        "metadata_label_1": "FORMAT",
+        "metadata_value_1": "BADGE REELS",
+        "metadata_label_2": "STATUS",
+        "metadata_value_2": "ACTIVE",
+        "metadata_label_3": "DEPARTMENT",
+        "metadata_value_3": "OBSERVATION",
+        "inventory_heading": "AVAILABLE FIELD ISSUES",
+        "media_label": "BADGE REEL FIELD PLATE"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "editorial_return": {
+      "type": "editorial-collection-return",
+      "settings": {
+        "label": "RETURN TO AVAILABLE INVENTORY",
+        "link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "editorial_hero",
+    "product-grid",
+    "editorial_return"
+  ]
+}
